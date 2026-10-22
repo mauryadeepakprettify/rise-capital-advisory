@@ -1,0 +1,85 @@
+@import '../_common'
+
+header
+    position: sticky
+    top: 0
+    box-shadow: 0px 2px 8px 0px #63636333
+    .header-wrap
+        width: 100%
+        padding: var(--headerpadding) var(--containerfluid)
+        display: flex
+        align-items: center
+        justify-content: space-between
+    .upper-col
+        width: 100%
+        border-bottom: 1px solid #0000001F
+        .col-a
+            .phone
+                display: flex
+                align-items: center
+                gap: 6px
+                font-size: 14px
+                .ico
+                    width: 15px
+                    height: 15px 
+                    font-size: 14px
+        .col-b
+            .nav
+                display: flex
+                align-items: center
+                justify-content: space-between
+                gap: 16px
+                li 
+                    a
+                        padding: 4px
+                        font-size: 14px
+                        img 
+                            width: 24px
+                            height: 24px
+                            vertical-align: middle 
+                    .ham-btn
+                        display: flex
+                        align-items: center 
+                        justify-content: center
+                        span
+                            width: 34px
+                            height: 2px
+                            display: block
+                            background-color: $primary
+                            position: relative
+                            &::before, &::after
+                                content: ""
+                                position: absolute
+                                width: 100%
+                                height: 2px 
+                                background-color: $primary
+                                transition: .5s ease
+                                left: 0
+                            &::before
+                                top: -6px
+                            &::after
+                                top: 6px
+                            
+
+    .lower-col
+        .col-a
+        .col-b
+            .nav
+                display: flex
+                align-items: center
+                justify-content: space-between
+                gap: 16px
+                li
+                    .menu
+                        position: relative
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        gap: 8px
+                        @include font(700)
+                        .submenu
+                            position: absolute
+
+
+
+

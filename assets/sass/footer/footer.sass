@@ -1,0 +1,76 @@
+@import '../_common'
+
+footer
+    background: var(--gradient-b)
+    .upper-col
+        padding: 40px var(--containerfluid) 60px
+        display: flex
+        justify-content: space-between
+        gap: 40px
+        .col-a
+            flex: 0 0 38%
+            .logo
+                max-width: 277px
+                margin-bottom: 24px
+            p
+                color: #FFFFFFB2
+                margin-bottom: 32px
+                font-size: 14px
+            .more
+                display: flex
+                align-items: center
+                gap: 6px
+                color: $secondary
+        .col-b, .col-c
+            h4
+                color: $white
+                font-size: 16px
+                @include font(700)
+                margin-bottom: 16px
+            ul
+                li
+                    &:not(:last-child)
+                        margin-bottom: 6px
+                    a
+                        color: #FFFFFFB2
+                        font-size: 14px
+                        @include font(500)
+        .col-d
+            flex: 0 1 25%
+            h4
+                color: $white
+                font-size: 16px
+                @include font(700)
+                margin-bottom: 16px 
+            p
+                color: #FFFFFFB2
+                font-size: 14px
+            .contact
+                margin: 12px 0 28px 
+                font-size: 20px
+                color: $white
+            .action
+                display: flex
+                gap: 16px
+                .btn
+                    border-radius: 4px
+
+    .lower-col
+        border-top: 1px solid #FFFFFF2B
+        padding: 18px var(--containerfluid)
+        display: flex
+        justify-content: space-between
+        align-items: center
+        p
+            color: $white
+            font-size: 14px
+        .prettify
+            display: flex
+            align-items: center
+            gap: 8px
+            a
+                img
+                    vertical-align: middle
+            
+
+ 
