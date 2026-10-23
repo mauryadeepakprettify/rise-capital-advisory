@@ -926,7 +926,7 @@ button {
   line-height: 1;
   display: inline-block;
   color: var(--white);
-  transition: 0.4s ease;
+  transition: 0.5s ease;
   position: relative;
   z-index: 1;
 }
@@ -2017,6 +2017,16 @@ button {
   justify-content: center;
   align-items: center;
   border: 1px solid var(--primary);
+  transition: 0.5s ease-in-out;
+}
+.quick-action .grid .action-card .social li a img {
+  transition: 0.5s ease-in-out;
+}
+.quick-action .grid .action-card .social li a:hover {
+  background: var(--primary);
+}
+.quick-action .grid .action-card .social li a:hover img {
+  filter: brightness(0) invert(1);
 }
 
 footer {
