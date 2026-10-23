@@ -265,11 +265,26 @@
 
 .home-sec-e
     padding: 70px 0
+    overflow: hidden
     .container
         .grid
             display: grid
             grid-template-columns: 1fr 420px
+            position: relative
+            &::before
+                content: ""
+                width: 313px
+                height: 313px
+                border-radius: 50%
+                background: #D2E5FFCC
+                filter: blur(140px)
+                position: absolute
+                top: -20%
+                left: 20%
+                z-index: 0
             .col-a
+                position: relative
+                z-index: 1
                 display: flex
                 flex-direction: column
                 justify-content: center
@@ -325,6 +340,89 @@
                 p
                     line-height: 1.2
 
+.home-sec-f
+    background: #6FA03A
+    padding: 60px 0 0
+    .container
+        max-width: 1070px
+        .heading
+            h2
+                color: $white
+        .grid
+            margin-top: 60px
+            display: grid
+            grid-template-columns: 1fr 398.69px
+            gap: 100px
+            .col-a
+                .dream-content-slider
+                    height: 498px
+                    overflow: hidden
+                    .swiper-wrapper
+                        .swiper-slide
+                            height: 264px !important
+                            .dream-content-card
+                                background: $white
+                                border-radius: 15px
+                                padding: 26px 32px 28px
+                                opacity: .2
+                                transition: .5s ease-in-out
+                                .quote-start 
+                                    margin-bottom: 14px
+                                .info
+                                    margin-top: 28px
+                                    display: flex
+                                    align-items: center
+                                    justify-content: space-between
+                                    h5
+                                        font-size: 16px
+                                        @include font(600)
+                                    p
+                                        font-size: 14px
+                            &.swiper-slide-active
+                                .dream-content-card
+                                    opacity: 1
+
+            .col-b                        
+                padding-bottom: 40px
+                .dream-image-slider
+                    overflow: hidden
+                    .swiper-wrapper
+                        .swiper-slide
+                            .dream-card
+                                position: relative
+                                height: 398px
+                                overflow: hidden
+                                border-radius: 16px
+                                img
+                                    width: 100%
+                                    height: 100%
+                                    object-fit: cover
+                                .play-btn
+                                    background: $white
+                                    position: absolute
+                                    top: 50%
+                                    left: 50%
+                                    transform: translate(-50%, -50%)
+                                    --playbtncolor: var(--secondary)
+                .dream-navigation
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    margin-top: 24px
+                    gap: 24px
+                    .dream-image-pagination
+                        position: relative
+                        height: 1.5px
+                        inset: unset
+                        background: #FFFFFF80
+                        .swiper-pagination-progressbar-fill
+                            background: $white
+                        
+                                    
+
+
+
+        
 
 
 

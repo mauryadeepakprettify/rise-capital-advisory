@@ -1210,7 +1210,7 @@ button {
   flex-direction: row-reverse;
 }
 .swiper-nav .swiper-prev, .swiper-nav .swiper-next {
-  --size: 45px;
+  --size: 35px;
   height: var(--size);
   width: var(--size);
   border-radius: 50%;
