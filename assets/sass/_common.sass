@@ -31,9 +31,9 @@ html
 
     --gradient-a: linear-gradient(270deg, #072141 0%, #1255A7 100%)
     --gradient-b: linear-gradient(270deg, #1255A7 0%, #072141 100%)
-    // --gradient-b: linear-gradient(260deg, #173254 0%, #0B6DE8 100%)
+    --gradient-c: linear-gradient(180deg, #FFFFFF 0%, #D2EDB5 100%)
 
-    // --gradient-c: linear-gradient(270deg, #D8D8D8 0%, #EBEBEB 50%, #C5C5C5 100%)
+    // --gradient-f: linear-gradient(270deg, #D8D8D8 0%, #EBEBEB 50%, #C5C5C5 100%)
     // --gradient-d: linear-gradient(360deg, #E6E6E6 0%, #C6C6C6 100%)
     // --gradient-e: linear-gradient(180deg, #E5E5E5 0%, #FFFFFF 46.5%, #F6F6F6 100%)
     --text: #666666
@@ -602,8 +602,8 @@ button
         display: flex
         align-items: center
         justify-content: space-between
-        width: 100%
-        max-width: 100%
+        width: calc(100% + 40px)
+        max-width: calc(100% + 40px)
         margin: 0 auto
         pointer-events: none
         user-select: none
@@ -646,82 +646,83 @@ button
         transition: .5s ease
         color: $white
         cursor: pointer
-        border: 1px solid $secondary
+        border: 1px solid $primary
         background: $white
         svg path
         transition: 0.5s ease
-        fill: $secondary
+        fill: $primary
         &:hover
             background: $primary
             border-color: $primary
             svg
                 path
                     fill: $white
-
-    &.no-background
-        height: auto
-        width: auto
-        display: block
-        background: none
-        border: none
-        line-height: 0
-        &:hover
+        &.no-background
+            height: auto
+            width: auto
+            display: block
             background: none
-    &.white
-        background: $white
-        border-color: $white
-        color: $secondary
-        &:hover
-            &:not(.swiper-button-disabled)
-                background: $secondary
-                border-color: $secondary
-                color: $white
-    &.secondary-border
-        border-color: $secondary
-        background: none
-        color: $secondary
-        &:hover
-            &:not(.swiper-button-disabled)
-                background: $secondary
-                color: $white
-    &.white-border
-        border-color: $white
-        background: none
-        color: $white
-        &:hover
-            &:not(.swiper-button-disabled)
-                background: $white
-                color: $secondary
-    &.gray-border
-        border-color: var(--black)
-        background: none
-        color: $text
-        &:hover
-            &:not(.swiper-button-disabled)
-                border-color: $primary
-                background: $primary
-                color: $white
-    &.green-border
-        border-color: var(--primary)
-        background: none
-        color: $text
-        &:hover
-            &:not(.swiper-button-disabled)
-                border-color: $primary
-                background: $primary
-                color: $white
-    &.gray-arrow
-        color: #888888
-    &.black-arrow
-        color: $black
-        &:hover
-            &:not(.swiper-button-disabled)
-                color: $secondary
-    &.swiper-button-disabled
-        cursor: no-drop
-        opacity: .4
-    &.swiper-button-lock
-        display: none !important
+            border: none
+            line-height: 0
+            &:hover
+                background: none
+        &.white
+            background: $white
+            border-color: $white
+            color: $secondary
+            &:hover
+                &:not(.swiper-button-disabled)
+                    background: $secondary
+                    border-color: $secondary
+                    color: $white
+        &.secondary-border
+            border-color: $secondary
+            background: none
+            color: $secondary
+            &:hover
+                &:not(.swiper-button-disabled)
+                    background: $secondary
+                    color: $white
+        &.white-border
+            border-color: $white
+            background: none
+            color: $white
+            &:hover
+                &:not(.swiper-button-disabled)
+                    background: $white
+                    color: $secondary
+        &.gray-border
+            border-color: var(--black)
+            background: none
+            color: $text
+            &:hover
+                &:not(.swiper-button-disabled)
+                    border-color: $primary
+                    background: $primary
+                    color: $white
+        &.green-border
+            border-color: var(--primary)
+            background: none
+            color: $text
+            &:hover
+                &:not(.swiper-button-disabled)
+                    border-color: $primary
+                    background: $primary
+                    color: $white
+        &.gray-arrow
+            color: #888888
+        &.black-arrow
+            color: $black
+            &:hover
+                &:not(.swiper-button-disabled)
+                    color: $secondary
+        &.swiper-button-disabled
+            cursor: no-drop
+            opacity: .4
+        &.swiper-button-lock
+            display: none !important
+        &.shadow
+            box-shadow: 0px 2px 8px 0px #63636333
 
 .play-btn
     --btnsize: 51px
@@ -1183,3 +1184,18 @@ button
     top: calc(100% + 1px)
     left: 0
     right: 0
+
+
+.heading
+    h2
+        font-size: 30px
+        line-height: 1.2
+        text-align: center
+        color: $primary
+        margin-bottom: 6px 
+        span
+            color: $secondary
+    p
+        font-size: 16px
+        line-height: 1.5
+        text-align: center

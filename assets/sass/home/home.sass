@@ -85,4 +85,184 @@
                         top: 0px
 
                 
+.home-sec-b
+    padding: 180px 0 70px
+    position: relative
+    .container
+        .row
+            .horizontal-ad-slider
+                margin: 0 auto
+                overflow: hidden
+                width: 792px
+                .swiper-wrapper
+                    .swiper-slide
+                        .ad-card
+                            width: 100%
+                            figure
+                                img
+                                    width: 100%
+                                    object-fit: contain
+            .ad-pagination
+                margin: 36px auto 0
+                width: fit-content
+                .swiper-pagination-bullet
+                    background: #66666663
+                    transition: .5s ease-in-out
+                    width: 10px
+                    height: 10px
+                    opacity: 1
+                    margin: 0 5px
+                    &.swiper-pagination-bullet-active
+                        background: $secondary
+    .enquire-form
+        position: absolute
+        z-index: 1
+        width: 100%
+        top: -40px
+        .container
+            .form
+                &.form-grid
+                    background: $white
+                    padding: 40px
+                    box-shadow: 0px 8px 24px 0px #959DA533
+                    border-radius: 10px
+                    --item: 5
+                    --gaplr: 58px
+                .form-group
+                    &::after
+                        display: none
+                    &::before
+                        background: linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0%, rgba(17, 17, 17, 0.09) 50%, rgba(255, 255, 255, 0.09) 100%)
+                        right: 0 
+                        bottom: unset
+                        left: unset
+                        top: 50%
+                        transform: translateY(-50%)
+                        width: 1px
+                        height: calc(100% + 60px)
+                    label
+                        sup
+                            color: red 
+                    &:last-of-type::before
+                        display: none
 
+
+.home-sec-c
+    padding: 70px 0
+    .container
+        .heading
+            h2
+            p
+        .slider-wrapper
+            margin-top: 60px
+            position: relative
+            .solution-slider
+                overflow: hidden
+                .swiper-wrapper
+                    .swiper-slide
+                        .solution-card
+                            border: 1px solid #00000042
+                            border-radius: 10px
+                            padding: 30px 50px
+                            display: flex
+                            justify-content: center
+                            flex-direction: column
+                            align-items:  center
+                            transition: .5s ease-in-out
+                            figure
+                                width: 51px
+                                height: 51px
+                                background: var(--gradient-c)
+                                border-radius: 50%
+                                display: flex 
+                                justify-content: center
+                                align-items: center
+                                margin-bottom: 18px
+                            h4
+                                font-size: 20px
+                                @include font(700)
+                                color: $primary
+                                margin-bottom: 2px
+                                transition: .5s ease-in-out
+                            p
+                                text-align: center
+                                font-size: 16px
+                                @include font(400)
+                                line-height: 1.2
+                                transition: .5s ease-in-out
+                            .btn
+                                margin-top: 18px
+                                font-size: 14px
+                        &.swiper-slide-active
+                            .solution-card
+                                background: #5E9423
+                                border-color: $secondary
+                                h4
+                                    color: $white
+                                p
+                                    color: #FFFFFFB2
+                                .btn
+                                    background: $white
+                                    color: $secondary
+        .btn                             
+            margin: 60px auto 0
+            display: block
+
+
+.home-sec-d
+    background: $primary
+    padding: 70px 0 120px
+    .heading
+        h2
+            color: $white 
+        p
+            color: #FFFFFFB2
+    .bank-list-wrapper
+        position: relative
+        margin-top: 60px
+        &::before
+            position: absolute
+            content: ""
+            top: 52px
+            left: 0
+            right: 0
+            height: 1px
+            width: 100%
+            background: #FFFFFFB2
+        .bank-slider
+            overflow: hidden
+            .swiper-slide
+                .bank-info
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    justify-content: center
+                    row-gap: 18px
+                    figure
+                        width: 120px
+                        height: 71px
+                        background: $white
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        border-radius: 10px
+                        overflow: hidden
+                        img
+                            max-width: 100%
+                            object-fit: contain 
+                    span
+                        width: 21px
+                        height: 21px
+                        background: $primary
+                        border: 1px solid $white
+                        border-radius: 50%
+                    figcaption
+                        color: $white
+                        @include font(700)
+        .btn
+            margin: 80px auto 0
+            display: block
+
+
+
+            

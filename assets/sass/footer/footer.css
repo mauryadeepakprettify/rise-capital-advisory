@@ -340,6 +340,7 @@ html {
   --primary-hover: $black;
   --gradient-a: linear-gradient(270deg, #072141 0%, #1255A7 100%);
   --gradient-b: linear-gradient(270deg, #1255A7 0%, #072141 100%);
+  --gradient-c: linear-gradient(180deg, #FFFFFF 0%, #D2EDB5 100%);
   --text: #666666;
   --green: green;
   --white: #FFFFFF;
@@ -1162,8 +1163,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: 100%;
+  width: calc(100% + 40px);
+  max-width: calc(100% + 40px);
   margin: 0 auto;
   pointer-events: none;
   -webkit-user-select: none;
@@ -1219,12 +1220,12 @@ button {
   transition: 0.5s ease;
   color: var(--white);
   cursor: pointer;
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--primary);
   background: var(--white);
 }
 .swiper-nav .swiper-prev, .swiper-nav .swiper-next {
   transition: 0.5s ease;
-  fill: var(--secondary);
+  fill: var(--primary);
 }
 .swiper-nav .swiper-prev:hover, .swiper-nav .swiper-next:hover {
   background: var(--primary);
@@ -1233,7 +1234,7 @@ button {
 .swiper-nav .swiper-prev:hover svg path, .swiper-nav .swiper-next:hover svg path {
   fill: var(--white);
 }
-.swiper-nav.no-background {
+.swiper-nav .swiper-prev.no-background, .swiper-nav .swiper-next.no-background {
   height: auto;
   width: auto;
   display: block;
@@ -1241,72 +1242,75 @@ button {
   border: none;
   line-height: 0;
 }
-.swiper-nav.no-background:hover {
+.swiper-nav .swiper-prev.no-background:hover, .swiper-nav .swiper-next.no-background:hover {
   background: none;
 }
-.swiper-nav.white {
+.swiper-nav .swiper-prev.white, .swiper-nav .swiper-next.white {
   background: var(--white);
   border-color: var(--white);
   color: var(--secondary);
 }
-.swiper-nav.white:hover:not(.swiper-button-disabled) {
+.swiper-nav .swiper-prev.white:hover:not(.swiper-button-disabled), .swiper-nav .swiper-next.white:hover:not(.swiper-button-disabled) {
   background: var(--secondary);
   border-color: var(--secondary);
   color: var(--white);
 }
-.swiper-nav.secondary-border {
+.swiper-nav .swiper-prev.secondary-border, .swiper-nav .swiper-next.secondary-border {
   border-color: var(--secondary);
   background: none;
   color: var(--secondary);
 }
-.swiper-nav.secondary-border:hover:not(.swiper-button-disabled) {
+.swiper-nav .swiper-prev.secondary-border:hover:not(.swiper-button-disabled), .swiper-nav .swiper-next.secondary-border:hover:not(.swiper-button-disabled) {
   background: var(--secondary);
   color: var(--white);
 }
-.swiper-nav.white-border {
+.swiper-nav .swiper-prev.white-border, .swiper-nav .swiper-next.white-border {
   border-color: var(--white);
   background: none;
   color: var(--white);
 }
-.swiper-nav.white-border:hover:not(.swiper-button-disabled) {
+.swiper-nav .swiper-prev.white-border:hover:not(.swiper-button-disabled), .swiper-nav .swiper-next.white-border:hover:not(.swiper-button-disabled) {
   background: var(--white);
   color: var(--secondary);
 }
-.swiper-nav.gray-border {
+.swiper-nav .swiper-prev.gray-border, .swiper-nav .swiper-next.gray-border {
   border-color: var(--black);
   background: none;
   color: var(--text);
 }
-.swiper-nav.gray-border:hover:not(.swiper-button-disabled) {
+.swiper-nav .swiper-prev.gray-border:hover:not(.swiper-button-disabled), .swiper-nav .swiper-next.gray-border:hover:not(.swiper-button-disabled) {
   border-color: var(--primary);
   background: var(--primary);
   color: var(--white);
 }
-.swiper-nav.green-border {
+.swiper-nav .swiper-prev.green-border, .swiper-nav .swiper-next.green-border {
   border-color: var(--primary);
   background: none;
   color: var(--text);
 }
-.swiper-nav.green-border:hover:not(.swiper-button-disabled) {
+.swiper-nav .swiper-prev.green-border:hover:not(.swiper-button-disabled), .swiper-nav .swiper-next.green-border:hover:not(.swiper-button-disabled) {
   border-color: var(--primary);
   background: var(--primary);
   color: var(--white);
 }
-.swiper-nav.gray-arrow {
+.swiper-nav .swiper-prev.gray-arrow, .swiper-nav .swiper-next.gray-arrow {
   color: #888888;
 }
-.swiper-nav.black-arrow {
+.swiper-nav .swiper-prev.black-arrow, .swiper-nav .swiper-next.black-arrow {
   color: var(--black);
 }
-.swiper-nav.black-arrow:hover:not(.swiper-button-disabled) {
+.swiper-nav .swiper-prev.black-arrow:hover:not(.swiper-button-disabled), .swiper-nav .swiper-next.black-arrow:hover:not(.swiper-button-disabled) {
   color: var(--secondary);
 }
-.swiper-nav.swiper-button-disabled {
+.swiper-nav .swiper-prev.swiper-button-disabled, .swiper-nav .swiper-next.swiper-button-disabled {
   cursor: no-drop;
   opacity: 0.4;
 }
-.swiper-nav.swiper-button-lock {
+.swiper-nav .swiper-prev.swiper-button-lock, .swiper-nav .swiper-next.swiper-button-lock {
   display: none !important;
+}
+.swiper-nav .swiper-prev.shadow, .swiper-nav .swiper-next.shadow {
+  box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 0.2);
 }
 
 .play-btn {
@@ -1958,6 +1962,22 @@ button {
   top: calc(100% + 1px);
   left: 0;
   right: 0;
+}
+
+.heading h2 {
+  font-size: 30px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+.heading h2 span {
+  color: var(--secondary);
+}
+.heading p {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
 }
 
 .quick-action {
