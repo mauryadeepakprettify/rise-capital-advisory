@@ -346,7 +346,7 @@ html {
   --litewhite: #c0c0c0;
   --black: #000000;
   --black-light: #313131;
-  --gray: #F6F6F6;
+  --gray: #F0F0F0;
   --container: 1280px;
   --containerfluid: 3rem;
 }
@@ -495,17 +495,17 @@ svg path {
 }
 @media only screen and (max-width: 1300px) {
   .container {
-    padding: 0 25px;
+    padding: 0 3rem;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .container {
+    padding: 0 1rem;
   }
 }
 @media only screen and (max-width: 767px) {
   .container {
     padding: 0 15px;
-  }
-}
-@media only screen and (max-width: 345px) {
-  .container {
-    padding: 0 13px;
   }
 }
 @media only screen and (max-width: 320px) {
@@ -1960,88 +1960,160 @@ button {
   right: 0;
 }
 
+.quick-action {
+  background-color: var(--gray);
+}
+.quick-action .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.quick-action .grid .action-card {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.quick-action .grid .action-card:not(:last-child)::before {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 70%;
+  background: rgba(65, 65, 65, 0.1019607843);
+}
+.quick-action .grid .action-card .ico {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+}
+.quick-action .grid .action-card h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.quick-action .grid .action-card p {
+  font-size: 14px;
+}
+.quick-action .grid .action-card .btn {
+  margin-top: 16px;
+  border-radius: 4px;
+}
+.quick-action .grid .action-card .social {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.quick-action .grid .action-card .social li a {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--primary);
+}
+
 footer {
   background: var(--gradient-b);
 }
-footer .upper-col {
-  padding: 40px var(--containerfluid) 60px;
+footer .upper-col .container .upper-row {
+  padding: 40px 0 60px;
   display: flex;
   justify-content: space-between;
   gap: 40px;
 }
-footer .upper-col .col-a {
+footer .upper-col .container .upper-row .col-a {
   flex: 0 0 38%;
 }
-footer .upper-col .col-a .logo {
+footer .upper-col .container .upper-row .col-a .logo {
   max-width: 277px;
   margin-bottom: 24px;
 }
-footer .upper-col .col-a p {
+footer .upper-col .container .upper-row .col-a p {
   color: rgba(255, 255, 255, 0.6980392157);
   margin-bottom: 32px;
   font-size: 14px;
 }
-footer .upper-col .col-a .more {
+footer .upper-col .container .upper-row .col-a .more {
   display: flex;
   align-items: center;
   gap: 6px;
   color: var(--secondary);
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: 0.5s ease-in-out;
 }
-footer .upper-col .col-b h4, footer .upper-col .col-c h4 {
+footer .upper-col .container .upper-row .col-a .more:hover {
+  transform: translateX(6px);
+}
+footer .upper-col .container .upper-row .col-b h4, footer .upper-col .container .upper-row .col-c h4 {
   color: var(--white);
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 16px;
 }
-footer .upper-col .col-b ul li:not(:last-child), footer .upper-col .col-c ul li:not(:last-child) {
+footer .upper-col .container .upper-row .col-b ul li:not(:last-child), footer .upper-col .container .upper-row .col-c ul li:not(:last-child) {
   margin-bottom: 6px;
 }
-footer .upper-col .col-b ul li a, footer .upper-col .col-c ul li a {
+footer .upper-col .container .upper-row .col-b ul li a, footer .upper-col .container .upper-row .col-c ul li a {
   color: rgba(255, 255, 255, 0.6980392157);
   font-size: 14px;
   font-weight: 500;
+  transition: 0.5s ease-in-out;
+  display: inline-block;
 }
-footer .upper-col .col-d {
+footer .upper-col .container .upper-row .col-b ul li a:hover, footer .upper-col .container .upper-row .col-c ul li a:hover {
+  transform: translateX(6px);
+}
+footer .upper-col .container .upper-row .col-d {
   flex: 0 1 25%;
 }
-footer .upper-col .col-d h4 {
+footer .upper-col .container .upper-row .col-d h4 {
   color: var(--white);
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 16px;
 }
-footer .upper-col .col-d p {
+footer .upper-col .container .upper-row .col-d p {
   color: rgba(255, 255, 255, 0.6980392157);
   font-size: 14px;
 }
-footer .upper-col .col-d .contact {
+footer .upper-col .container .upper-row .col-d .contact {
   margin: 12px 0 28px;
   font-size: 20px;
   color: var(--white);
 }
-footer .upper-col .col-d .action {
+footer .upper-col .container .upper-row .col-d .action {
   display: flex;
   gap: 16px;
 }
-footer .upper-col .col-d .action .btn {
+footer .upper-col .container .upper-row .col-d .action .btn {
   border-radius: 4px;
 }
 footer .lower-col {
   border-top: 1px solid rgba(255, 255, 255, 0.168627451);
-  padding: 18px var(--containerfluid);
+}
+footer .lower-col .container .lower-row {
+  padding: 18px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-footer .lower-col p {
+footer .lower-col .container .lower-row p {
   color: var(--white);
   font-size: 14px;
 }
-footer .lower-col .prettify {
+footer .lower-col .container .lower-row .prettify {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-footer .lower-col .prettify a img {
+footer .lower-col .container .lower-row .prettify a img {
   vertical-align: middle;
 }/*# sourceMappingURL=footer.css.map */
