@@ -1,1 +1,88 @@
 @import '../_common'
+
+.home-sec-a
+    background: $primary
+    height: 449px 
+    position: relative
+    overflow: hidden
+    &::before
+        content: ""
+        width: 582px
+        height: 582px
+        border-radius: 50%
+        background: #1462CDCC
+        filter: blur(110px)
+        position: absolute
+        left: 24px
+        bottom: -50px
+        z-index: 0
+    .container
+        position: relative
+        z-index: 1
+        height: 100%
+        .grid
+            height: 100%
+            display: grid
+            grid-template-columns: 1fr 435px
+            .col-a 
+                height: 100%
+                padding: 80px 0 120px
+                h1
+                    font-size: 36px
+                    @include font(700)
+                    color: $white
+                    line-height: 1.2
+                    span
+                        display: block
+                        font-weight: 300
+                .offers
+                    margin-top: 50px
+                    display: flex
+                    align-items: center
+                    gap: 36px
+                    li
+                        cursor: pointer
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        align-items: center
+                        gap: 8px
+                        figure
+                            width: 51px
+                            height: 51px
+                            border-radius: 50%
+                            border: 1px solid $white
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            transition: .5s ease-in-out
+                        figcaption
+                            font-size: 14px
+                            @include font(400)
+                            color: $white
+                            transition: .5s ease-in-out
+                        &:hover
+                            figure
+                                box-shadow: 0px 4px 12px 0px #0000001A
+                                background: $secondary
+                                border-color: $secondary
+                            figcaption
+                                @include font(700)
+            .col-b
+                display: flex
+                align-items: end
+                figure
+                    position: relative
+                    display: flex
+                    align-items: end
+                    &::before
+                        position: absolute
+                        content: ""
+                        background: url(../../icon/diagonal.svg)
+                        width: 72px
+                        height: 106px
+                        right: -94px
+                        top: 0px
+
+                
+

@@ -1964,6 +1964,8 @@ header {
   position: sticky;
   top: 0;
   box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 0.2);
+  background: var(--white);
+  z-index: 5;
 }
 header .header-wrap {
   width: 100%;
@@ -2061,7 +2063,7 @@ header .lower-col .col-b .nav li .menu .submenu {
   right: 0;
   width: 200px;
   height: 200px;
-  background: url("../../vector/particle.svg");
+  background: url("../../icon/R.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

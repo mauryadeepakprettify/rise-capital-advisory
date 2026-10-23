@@ -1958,4 +1958,103 @@ button {
   top: calc(100% + 1px);
   left: 0;
   right: 0;
+}
+
+.home-sec-a {
+  background: var(--primary);
+  height: 449px;
+  position: relative;
+  overflow: hidden;
+}
+.home-sec-a::before {
+  content: "";
+  width: 582px;
+  height: 582px;
+  border-radius: 50%;
+  background: rgba(20, 98, 205, 0.8);
+  filter: blur(110px);
+  position: absolute;
+  left: 24px;
+  bottom: -50px;
+  z-index: 0;
+}
+.home-sec-a .container {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+.home-sec-a .container .grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 435px;
+}
+.home-sec-a .container .grid .col-a {
+  height: 100%;
+  padding: 80px 0 120px;
+}
+.home-sec-a .container .grid .col-a h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+}
+.home-sec-a .container .grid .col-a h1 span {
+  display: block;
+  font-weight: 300;
+}
+.home-sec-a .container .grid .col-a .offers {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.home-sec-a .container .grid .col-a .offers li {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.home-sec-a .container .grid .col-a .offers li figure {
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+}
+.home-sec-a .container .grid .col-a .offers li figcaption {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--white);
+  transition: 0.5s ease-in-out;
+}
+.home-sec-a .container .grid .col-a .offers li:hover figure {
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1019607843);
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+.home-sec-a .container .grid .col-a .offers li:hover figcaption {
+  font-weight: 700;
+}
+.home-sec-a .container .grid .col-b {
+  display: flex;
+  align-items: end;
+}
+.home-sec-a .container .grid .col-b figure {
+  position: relative;
+  display: flex;
+  align-items: end;
+}
+.home-sec-a .container .grid .col-b figure::before {
+  position: absolute;
+  content: "";
+  background: url(../../icon/diagonal.svg);
+  width: 72px;
+  height: 106px;
+  right: -94px;
+  top: 0px;
 }/*# sourceMappingURL=home.css.map */
