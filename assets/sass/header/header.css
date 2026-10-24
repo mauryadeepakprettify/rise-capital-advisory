@@ -1234,6 +1234,9 @@ button {
 .swiper-nav .swiper-prev:hover svg path, .swiper-nav .swiper-next:hover svg path {
   fill: var(--white);
 }
+.swiper-nav .swiper-prev:hover img, .swiper-nav .swiper-next:hover img {
+  filter: brightness(0) invert(1);
+}
 .swiper-nav .swiper-prev.no-background, .swiper-nav .swiper-next.no-background {
   height: auto;
   width: auto;
@@ -1978,6 +1981,22 @@ button {
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
+}
+
+.gradient-blur {
+  position: relative;
+}
+.gradient-blur::before {
+  content: "";
+  width: 582px;
+  height: 582px;
+  filter: blur(110px);
+  position: absolute;
+  left: 24px;
+  top: -40%;
+  z-index: 0;
+  border-radius: 50%;
+  background: rgba(20, 98, 205, 0.8);
 }
 
 header {
