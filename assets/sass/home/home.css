@@ -2006,7 +2006,7 @@ button {
 .home-sec-a .container .grid {
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 435px;
+  grid-template-columns: 1fr 478px;
 }
 .home-sec-a .container .grid .col-a {
   height: 100%;
@@ -2063,20 +2063,84 @@ button {
 .home-sec-a .container .grid .col-b {
   display: flex;
   align-items: end;
+  position: relative;
 }
-.home-sec-a .container .grid .col-b figure {
+.home-sec-a .container .grid .col-b .col-b-wrapper {
   position: relative;
   display: flex;
   align-items: end;
 }
-.home-sec-a .container .grid .col-b figure::before {
+.home-sec-a .container .grid .col-b .col-b-wrapper::before {
   position: absolute;
   content: "";
   background: url(../../icon/diagonal.svg);
   width: 72px;
   height: 106px;
-  right: -94px;
+  right: -84px;
   top: 0px;
+}
+.home-sec-a .container .grid .col-b .col-b-wrapper .hero-usp-slider {
+  overflow: hidden;
+  position: absolute;
+  left: -55px;
+  top: 44px;
+  width: 153px;
+  height: 60px;
+  z-index: 3;
+}
+.home-sec-a .container .grid .col-b .col-b-wrapper .hero-usp-slider .usp-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateX(-110%);
+  transition: transform 1s ease-in-out;
+}
+.home-sec-a .container .grid .col-b .col-b-wrapper .hero-usp-slider .usp-slide.active {
+  transform: translateX(0);
+}
+.home-sec-a .container .grid .col-b .col-b-wrapper .hero-usp-slider .usp-slide .usp-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 11px 14px;
+  width: 100%;
+}
+.home-sec-a .container .grid .col-b .col-b-wrapper .hero-usp-slider .usp-slide .usp-card h5 {
+  font-size: 14px;
+  font-weight: 700;
+}
+.home-sec-a .container .grid .col-b .col-b-wrapper .hero-usp-slider .usp-slide .usp-card p {
+  font-size: 14px;
+}
+.home-sec-a .container .grid .col-b .col-b-wrapper .hero-usp-slider .usp-slide .usp-card p span {
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--secondary);
+}
+.home-sec-a .container .grid .col-b .usp-image-slider {
+  overflow: hidden;
+  position: absolute;
+  right: 28px;
+  bottom: 0;
+  width: 478px;
+  height: 345px;
+  z-index: 2;
+}
+.home-sec-a .container .grid .col-b .usp-image-slider .usp-image-slide {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(110%);
+  transition: transform 1s ease-in-out;
+}
+.home-sec-a .container .grid .col-b .usp-image-slider .usp-image-slide.active {
+  transform: translateY(0);
+}
+.home-sec-a .container .grid .col-b .usp-image-slider .usp-image-slide .usp-image-card img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .home-sec-b {

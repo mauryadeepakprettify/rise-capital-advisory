@@ -97,3 +97,4 @@ const dreamImageSwiper = new Swiper(".dream-image-slider", {
 
 dreamContentSwiper.controller.control = dreamImageSwiper;
 dreamImageSwiper.controller.control = dreamContentSwiper;
+

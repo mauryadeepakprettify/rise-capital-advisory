@@ -22,4 +22,34 @@ document.querySelectorAll(".overlay, .close").forEach((el) => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const textSlides = document.querySelectorAll(".hero-usp-slider .usp-slide");
 
+  const imageSlides = document.querySelectorAll(
+    ".usp-image-slider .usp-image-slide",
+  );
+
+  if (!textSlides.length || textSlides.length !== imageSlides.length) {
+    return;
+  }
+
+  let currentIndex = 0;
+  const interval = 3000;
+
+  function changeSlide() {
+    const previousIndex = currentIndex;
+    const nextIndex = (currentIndex + 1) % textSlides.length;
+
+    textSlides[previousIndex].classList.remove("active");
+
+    textSlides[nextIndex].classList.add("active");
+
+    imageSlides[previousIndex].classList.remove("active");
+
+    imageSlides[nextIndex].classList.add("active");
+
+    currentIndex = nextIndex;
+  }
+
+  setInterval(changeSlide, interval);
+});
