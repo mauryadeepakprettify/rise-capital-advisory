@@ -69,7 +69,7 @@ new Swiper(".bank-slider", {
   },
 });
 
-new Swiper(".dream-content-slider", {
+const dreamContentSwiper = new Swiper(".dream-content-slider", {
   slidesPerView: 1.6,
   spaceBetween: 24,
   loop: false,
@@ -77,18 +77,23 @@ new Swiper(".dream-content-slider", {
   direction: "vertical",
 });
 
-new Swiper(".dream-image-slider", {
+const dreamImageSwiper = new Swiper(".dream-image-slider", {
   slidesPerView: 1,
   spaceBetween: 24,
   loop: false,
   speed: 1200,
+
   pagination: {
     el: ".dream-image-pagination",
     type: "progressbar",
     clickable: true,
   },
+
   navigation: {
     nextEl: ".dream-next",
     prevEl: ".dream-prev",
   },
 });
+
+dreamContentSwiper.controller.control = dreamImageSwiper;
+dreamImageSwiper.controller.control = dreamContentSwiper;

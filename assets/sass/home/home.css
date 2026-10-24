@@ -2374,7 +2374,7 @@ button {
   padding: 60px 0 0;
 }
 .home-sec-f .container {
-  max-width: 1070px;
+  max-width: 960px;
 }
 .home-sec-f .container .heading h2 {
   color: var(--white);
@@ -2393,6 +2393,7 @@ button {
   height: 264px !important;
 }
 .home-sec-f .container .grid .col-a .dream-content-slider .swiper-wrapper .swiper-slide .dream-content-card {
+  height: 100%;
   background: var(--white);
   border-radius: 15px;
   padding: 26px 32px 28px;
