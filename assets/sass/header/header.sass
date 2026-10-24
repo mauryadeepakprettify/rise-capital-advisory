@@ -236,3 +236,52 @@ header
                 margin-top: 20px
     &.is-open
         transform: translateX(0%)
+
+
+.modal.video-modal
+    top: 100%
+    left: 50%
+    translate: -50% 100%
+    background: transparent
+    z-index: 20
+    max-width: 768px
+    width: 100% 
+    transition: .5s ease 
+    aspect-ratio: 16 / 9
+    &.is-open
+        top: 50%
+        translate: -50% -50%
+    .close
+        position: absolute
+        bottom: calc(100% + 20px)
+        top: auto
+        right: -40px
+        height: 45px  
+        width: 45px
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: .5s ease
+        @include media(767)
+            right: 0
+        svg
+            path
+                stroke-width: 2
+                stroke: white
+        &:hover
+            transform: scale(.9)
+            
+            
+    .model-body
+        position: absolute
+        top: 50%
+        left: 50%
+        translate: -50% -50%
+        width: 100%
+        max-width: 700px
+        @include media(675)
+            max-width: 95%
+        iframe
+            width: 100%
+            aspect-ratio: 1.9
+            border: 2px solid $white

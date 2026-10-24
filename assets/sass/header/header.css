@@ -2256,4 +2256,62 @@ header .lower-col .col-b .nav li .menu .submenu {
 }
 .enquire-modal.is-open {
   transform: translateX(0%);
+}
+
+.modal.video-modal {
+  top: 100%;
+  left: 50%;
+  translate: -50% 100%;
+  background: transparent;
+  z-index: 20;
+  max-width: 768px;
+  width: 100%;
+  transition: 0.5s ease;
+  aspect-ratio: 16/9;
+}
+.modal.video-modal.is-open {
+  top: 50%;
+  translate: -50% -50%;
+}
+.modal.video-modal .close {
+  position: absolute;
+  bottom: calc(100% + 20px);
+  top: auto;
+  right: -40px;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+}
+@media only screen and (max-width: 767px) {
+  .modal.video-modal .close {
+    right: 0;
+  }
+}
+.modal.video-modal .close svg path {
+  stroke-width: 2;
+  stroke: white;
+}
+.modal.video-modal .close:hover {
+  transform: scale(0.9);
+}
+.modal.video-modal .model-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  max-width: 700px;
+}
+@media only screen and (max-width: 675px) {
+  .modal.video-modal .model-body {
+    max-width: 95%;
+  }
+}
+.modal.video-modal .model-body iframe {
+  width: 100%;
+  aspect-ratio: 1.9;
+  border: 2px solid var(--white);
 }/*# sourceMappingURL=header.css.map */
