@@ -116,7 +116,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-b"> 
+                    <div class="col-b">
                         <figure class="col-b-wrapper">
                             <img src="assets/icon/R.svg" alt="R" />
                             <div class="hero-usp-slider">
@@ -555,11 +555,13 @@
                                 <label for="loanAmount">Loan Amount</label>
                                 <div class="emi-input-wrap">
                                     <span class="currency">₹</span>
-                                    <input type="number" id="loanAmountInput" value="500000" min="50000" max="10000000" step="10000" />
+                                    <input type="number" id="loanAmountInput" value="500000" min="50000" max="10000000"
+                                        step="10000" />
                                 </div>
                             </div>
-                            <input type="range" id="loanAmount" min="50000" max="10000000" step="10000" value="500000" class="emi-range" />
-                            
+                            <input type="range" id="loanAmount" min="50000" max="10000000" step="10000" value="500000"
+                                class="emi-range" />
+
                         </div>
 
                         <div class="emi-field">
@@ -570,8 +572,9 @@
                                     <span class="currency suffix">%</span>
                                 </div>
                             </div>
-                            <input type="range" id="interestRate" min="1" max="30" step="0.1" value="9" class="emi-range" />
-                           
+                            <input type="range" id="interestRate" min="1" max="30" step="0.1" value="9"
+                                class="emi-range" />
+
                         </div>
 
                         <div class="emi-field">
@@ -583,7 +586,7 @@
                                 </div>
                             </div>
                             <input type="range" id="tenure" min="1" max="30" step="1" value="5" class="emi-range" />
-                           
+
                         </div>
 
                         <div class="emi-result">
@@ -611,7 +614,7 @@
                                 <span class="breakdown-value" id="bTotal">₹0</span>
                             </div>
                         </div>
-                        <button class="btn secondary-btn emi-cta">Request a Callback</button>
+                        <button data-modal="enquire-modal" class="btn secondary-btn emi-cta">Request a Callback</button>
                     </div>
                 </div>
             </div>
@@ -765,6 +768,54 @@
             </div>
         </div>
     </div>
+
+    <div class="modal enquire-modal">
+        <button class="close">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 0.5L25.5 25.5M0.5 25.5L25.5 0.5" stroke="black" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+        <div class="model-body">
+            <div class="title"> 
+                <h4>Enquire Now</h4>
+                <p>Have a question? We’re here to help.</p>
+            </div>
+            <div class="form form-grid">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder />
+                    <label for="">Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control" placeholder />
+                    <label for="">Phone</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder />
+                    <label for="">Email</label>
+                </div>
+                <div class="form-group">
+                    <textarea name="" id="" class="form-control" placeholder></textarea>
+                    <label for="">Message</label>
+                </div>
+                <div class="sbmt-grp text-center full">
+                    <a href="" class="btn black">SUBMIT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="modal video-modal">
+        <div class="model-body">
+            <button class="close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.75 0.75L23.25 23.25M0.75 23.25L23.25 0.75" stroke="black" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <iframe id="iframe1" allow="autoplay; fullscreen" src=""></iframe>
+        </div>
+    </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/swiper.js"></script>

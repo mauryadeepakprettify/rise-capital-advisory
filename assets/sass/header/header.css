@@ -2168,4 +2168,92 @@ header .lower-col .col-b .nav li .menu .submenu {
 }
 .menu-modal.is-open {
   transform: translateX(0);
+}
+
+.enquire-modal {
+  right: 0;
+  transform: translateX(100%);
+  transition: 0.5s ease;
+  background: linear-gradient(180deg, #fff 30%, #E5E5E5 100%);
+}
+.enquire-modal::before {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background: url("../../vector/particle.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+.enquire-modal::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 247px;
+  background: url("../../img/doctor.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+}
+.enquire-modal .close svg path {
+  stroke: var(--text) !important;
+}
+.enquire-modal .model-body {
+  padding: 40px 35px 30px;
+  height: 100%;
+  overflow-y: auto;
+}
+.enquire-modal .model-body::-webkit-scrollbar {
+  width: 3px;
+  background: var(--white);
+  height: 3px;
+}
+.enquire-modal .model-body::-webkit-scrollbar-track {
+  box-shadow: none;
+}
+.enquire-modal .model-body::-webkit-scrollbar-thumb {
+  background-color: #5e5e5e;
+  border-radius: 8px;
+}
+@media only screen and (max-width: 675px) {
+  .enquire-modal .model-body {
+    padding: 50px 20px 30px;
+  }
+}
+.enquire-modal .model-body .title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.enquire-modal .model-body .title h4 {
+  font-size: 32px;
+  color: var(--primary);
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+}
+.enquire-modal .model-body .title p {
+  color: var(--text);
+  font-size: 14px;
+  margin-top: 4px;
+  line-height: 20px;
+  max-width: 317px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.enquire-modal .model-body .form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.enquire-modal .model-body .form .sbmt-grp {
+  margin-top: 20px;
+}
+.enquire-modal.is-open {
+  transform: translateX(0%);
 }/*# sourceMappingURL=header.css.map */
