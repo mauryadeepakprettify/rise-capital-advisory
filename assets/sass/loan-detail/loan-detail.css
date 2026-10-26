@@ -318,7 +318,7 @@ html {
 
 :root {
   --headerpadding: 10px;
-  --headerheight: 136.59px;
+  --headerheight: 120.39px;
   --headerfixed: 65px;
   --footerstrip: 66px;
   --breadcrumbheight: 44px;
@@ -597,7 +597,7 @@ h2 {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.3;
-  color: var(--secondary);
+  color: var(--primary);
 }
 @media only screen and (max-width: 768px) {
   h2 {
@@ -611,7 +611,7 @@ h2 {
   }
 }
 h2 span {
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 h3 {
@@ -1384,17 +1384,15 @@ button {
   margin-bottom: 0 !important;
   max-width: 1080px;
   margin: auto;
-  margin-top: 150px;
-  margin-bottom: 50px;
 }
 .website-content h1, .website-content h2, .website-content h3, .website-content h4, .website-content h5, .website-content h6 {
-  color: var(--secondary);
+  color: var(--primary);
 }
 .website-content h1 {
-  font-size: 48px;
+  font-size: 42px;
   margin-bottom: 45px;
   text-align: center;
-  font-weight: normal;
+  font-weight: 700;
 }
 @media only screen and (max-width: 675px) {
   .website-content h1 {
@@ -1409,9 +1407,9 @@ button {
   }
 }
 .website-content h2 {
-  font-size: 34px;
+  font-size: 30px;
   margin: 20px 0 10px;
-  font-weight: 500;
+  font-weight: 700;
 }
 @media only screen and (max-width: 675px) {
   .website-content h2 {
@@ -1460,7 +1458,6 @@ button {
 }
 .website-content p, .website-content li {
   color: var(--text);
-  text-align: justify;
   hyphens: auto;
 }
 @media only screen and (max-width: 520px) {
@@ -1479,7 +1476,7 @@ button {
   text-decoration: underline;
 }
 .website-content p, .website-content ul {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .website-content ul {
   padding-left: 18px;
@@ -2005,4 +2002,110 @@ button {
 }
 .loan-detail-sec-a .container::before {
   top: -200px;
+}
+
+.content-nav {
+  background: var(--gray);
+  position: sticky;
+  top: var(--headerheight);
+  z-index: 5;
+}
+.content-nav .container .nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.content-nav .container .nav-tabs li a {
+  padding: 16px 10px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.5s ease;
+  position: relative;
+}
+.content-nav .container .nav-tabs li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: 0.5s ease;
+}
+.content-nav .container .nav-tabs li a.active {
+  color: var(--primary);
+}
+.content-nav .container .nav-tabs li a.active::before {
+  width: 100%;
+}
+
+.loan-detail-sec-b {
+  padding: 60px 0 0;
+}
+.loan-detail-sec-b .container .content-row {
+  display: grid;
+  grid-template-columns: 1fr 378px;
+  gap: 48px;
+}
+.loan-detail-sec-b .container .content-row .content-col-a .benifits-content {
+  margin-top: 30px;
+}
+.loan-detail-sec-b .container .content-row .content-col-a .benifits-content .benifits-row {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.loan-detail-sec-b .container .content-row .content-col-a .benifits-content .benifits-row .benifit-col {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 34px 26px;
+}
+.loan-detail-sec-b .container .content-row .content-col-a .benifits-content .benifits-row .benifit-col .benifit-heading {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.loan-detail-sec-b .container .content-row .content-col-a .benifits-content .benifits-row .benifit-col .benifit-heading span {
+  flex-shrink: 0;
+  width: 51px;
+  height: 51px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #D1E3FA;
+  border-radius: 50%;
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 700;
+}
+.loan-detail-sec-b .container .content-row .content-col-a .benifits-content .benifits-row .benifit-col .benifit-heading h2 {
+  font-size: 18px;
+  @inlcude font(700);
+}
+.loan-detail-sec-b .container .content-row .form-col-b {
+  background: rgba(221, 221, 221, 0.2);
+  border-radius: 10px;
+  padding: 42px;
+  position: sticky;
+  top: calc(var(--headerheight) + 100px);
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.loan-detail-sec-b .container .content-row .form-col-b h3 {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--primary);
+}
+.loan-detail-sec-b .container .content-row .form-col-b form {
+  margin-top: 24px;
+}
+.loan-detail-sec-b .container .content-row .form-col-b form .btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 12px auto 0;
 }/*# sourceMappingURL=loan-detail.css.map */

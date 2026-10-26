@@ -16,7 +16,7 @@ html
     margin-bottom: 0 !important
 :root
     --headerpadding: 10px
-    --headerheight: 136.59px
+    --headerheight: 120.39px
     --headerfixed: 65px
     --footerstrip: 66px
     --breadcrumbheight: 44px
@@ -188,14 +188,14 @@ h2
     font-weight: 700
     font-size: 36px
     line-height: 1.3
-    color: $secondary
+    color: $primary
     @include media(768)
         font-size: 38px
     @include media(540)
         font-size: 26px
         margin-bottom: 10px
     span
-        color: $primary
+        color: $secondary
 
 h3
     font-weight: 600
@@ -782,15 +782,15 @@ button
         margin-bottom: 0 !important
         max-width: 1080px
         margin: auto
-        margin-top: 150px
-        margin-bottom: 50px
+        // margin-top: 150px
+        // margin-bottom: 50px
     h1,h2,h3,h4,h5,h6
-        color: $secondary
+        color: $primary
     h1
-        font-size: 48px
+        font-size: 42px
         margin-bottom: 45px
         text-align: center
-        font-weight: normal
+        @include font(700)
         @include media(675)
             font-size: 34px
         @include media(520)
@@ -798,9 +798,9 @@ button
             font-weight: bold
             margin-bottom: 25px
     h2
-        font-size: 34px
+        font-size: 30px
         margin: 20px 0 10px
-        @include font(500)
+        @include font(700)
         @include media(675)
             font-size: 24px
     h3
@@ -830,7 +830,7 @@ button
         margin: 22px 0 18px
     p,li
         color: $text
-        text-align: justify
+        // text-align: justify
         hyphens: auto
         // word-spacing: -0.07em
         // @include font(500)
@@ -844,7 +844,7 @@ button
         &:hover
             text-decoration: underline
     p,ul
-        margin-bottom: 30px
+        margin-bottom: 20px
     ul
         padding-left: 18px
         @include media(675)

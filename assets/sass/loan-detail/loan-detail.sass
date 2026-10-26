@@ -6,3 +6,94 @@
     .container
         &::before
             top: -200px
+            
+.content-nav
+    background: var(--gray)
+    position: sticky
+    top: var(--headerheight)
+    z-index: 5
+    .container
+        .nav-tabs
+            display: flex 
+            align-items: center
+            gap: 24px
+            li
+                a
+                    padding: 16px 10px
+                    display: inline-block
+                    font-size: 16px
+                    @include font(500) 
+                    transition: .5s ease
+                    position: relative
+                    &::before
+                        content: ""
+                        position: absolute
+                        left: 0
+                        bottom: 0
+                        width: 0
+                        height: 2px
+                        background: $primary
+                        transition: .5s ease
+                    &.active
+                        color: $primary
+                        &::before
+                            width: 100%
+
+
+.loan-detail-sec-b
+    padding: 60px 0 0
+    .container
+        .content-row
+            display: grid
+            grid-template-columns: 1fr 378px
+            gap: 48px
+            .content-col-a
+                .benifits-content
+                    margin-top: 30px 
+                    .benifits-row
+                        margin-top: 30px
+                        display: grid
+                        grid-template-columns: repeat(2, 1fr)
+                        gap: 20px
+                        .benifit-col
+                            border: 1px solid #00000033
+                            border-radius: 10px
+                            padding: 34px 26px
+                            .benifit-heading
+                                display: flex
+                                align-items: center
+                                gap: 24px
+                                align-items: center
+                                margin-bottom: 20px
+                                span 
+                                    flex-shrink: 0  
+                                    width: 51px
+                                    height: 51px
+                                    display: inline-flex
+                                    align-items: center
+                                    justify-content: center
+                                    background: #D1E3FA
+                                    border-radius: 50%
+                                    color: $primary
+                                    font-size: 18px
+                                    @include font(700)
+                                h2
+                                    font-size: 18px
+                                    @inlcude font(700)
+            .form-col-b
+                background: #DDDDDD33
+                border-radius: 10px
+                padding: 42px
+                position: sticky
+                top: calc(var(--headerheight) + 100px)
+                height: fit-content
+                h3 
+                    font-size: 20px
+                    @include font(700)
+                    text-align: center
+                    color: $primary
+                form
+                    margin-top: 24px
+                    .btn
+                        width: fit-content
+                        margin: 12px auto 0
