@@ -48,10 +48,12 @@
             grid-template-columns: 1fr 378px
             gap: 48px
             .content-col-a
-                .benifits-content
-                    margin-top: 30px 
+                .content
+                    margin-top: 30px  
+                    h2
+                        margin-bottom: 30px
+                .benifits-content 
                     .benifits-row
-                        margin-top: 30px
                         display: grid
                         grid-template-columns: repeat(2, 1fr)
                         gap: 20px
@@ -80,6 +82,41 @@
                                 h2
                                     font-size: 18px
                                     @inlcude font(700)
+                .bank-partner-content
+                    .bank-row
+                        display: grid
+                        grid-template-columns: repeat(3, 1fr)
+                        gap: 20px
+                        .bank-col
+                            border: 1px solid #00000033
+                            border-radius: 10px
+                            padding: 24px 16px
+                            display: flex
+                            align-items: center
+                            gap: 16px
+                            position: relative
+                            .bank-enquire
+                                position: absolute
+                                inset: 0
+                                background: #FFFFFF80
+                                backdrop-filter: blur(12px)
+                                border-radius: 10px
+                                display: flex
+                                align-items: center
+                                justify-content: center
+                            figure
+                                width: 90px 
+                            figcaption
+                                .ttl
+                                    font-size: 14px
+                                    @include font(500)
+                                .rate
+                                    font-size: 16px
+                                    @include font(500)
+                                    color: $primary
+                                
+                            
+                            
             .form-col-b
                 background: #DDDDDD33
                 border-radius: 10px

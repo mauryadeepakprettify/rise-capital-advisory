@@ -2048,11 +2048,13 @@ button {
   grid-template-columns: 1fr 378px;
   gap: 48px;
 }
-.loan-detail-sec-b .container .content-row .content-col-a .benifits-content {
+.loan-detail-sec-b .container .content-row .content-col-a .content {
   margin-top: 30px;
 }
+.loan-detail-sec-b .container .content-row .content-col-a .content h2 {
+  margin-bottom: 30px;
+}
 .loan-detail-sec-b .container .content-row .content-col-a .benifits-content .benifits-row {
-  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
@@ -2085,6 +2087,42 @@ button {
 .loan-detail-sec-b .container .content-row .content-col-a .benifits-content .benifits-row .benifit-col .benifit-heading h2 {
   font-size: 18px;
   @inlcude font(700);
+}
+.loan-detail-sec-b .container .content-row .content-col-a .bank-partner-content .bank-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.loan-detail-sec-b .container .content-row .content-col-a .bank-partner-content .bank-row .bank-col {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+.loan-detail-sec-b .container .content-row .content-col-a .bank-partner-content .bank-row .bank-col .bank-enquire {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5019607843);
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loan-detail-sec-b .container .content-row .content-col-a .bank-partner-content .bank-row .bank-col figure {
+  width: 90px;
+}
+.loan-detail-sec-b .container .content-row .content-col-a .bank-partner-content .bank-row .bank-col figcaption .ttl {
+  font-size: 14px;
+  font-weight: 500;
+}
+.loan-detail-sec-b .container .content-row .content-col-a .bank-partner-content .bank-row .bank-col figcaption .rate {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary);
 }
 .loan-detail-sec-b .container .content-row .form-col-b {
   background: rgba(221, 221, 221, 0.2);
