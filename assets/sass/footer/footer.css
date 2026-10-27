@@ -308,10 +308,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .mb-0 {
   margin-bottom: 0 !important;
 }
@@ -347,6 +343,7 @@ html {
   --litewhite: #c0c0c0;
   --black: #000000;
   --black-light: #313131;
+  --border: #D0D0D0;
   --gray: #F0F0F0;
   --container: 1280px;
   --containerfluid: 3rem;
@@ -407,6 +404,11 @@ body, html {
   font-style: normal;
   font-weight: normal;
   font-family: "Lato", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--headerheight));
 }
 
 a {
@@ -1962,6 +1964,38 @@ button {
   top: calc(100% + 1px);
   left: 0;
   right: 0;
+}
+
+.accordion {
+  overflow: hidden;
+}
+.accordion.open .accordion-content {
+  grid-template-rows: 1fr;
+  padding: 16px 0;
+}
+.accordion .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0px;
+  cursor: pointer;
+  color: var(--text);
+}
+.accordion .accordion-header span:first-child {
+  font-weight: 500;
+}
+.accordion .accordion-header .toggle img {
+  width: 32px;
+  height: 32px;
+}
+.accordion .accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+.accordion .accordion-content .content {
+  overflow: hidden;
 }
 
 .heading h2 {

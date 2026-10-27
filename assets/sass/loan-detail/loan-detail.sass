@@ -49,7 +49,7 @@
             gap: 48px
             .content-col-a
                 .content
-                    margin-top: 30px  
+                    margin-top: 50px  
                     h2
                         margin-bottom: 30px
                 .benifits-content 
@@ -95,7 +95,12 @@
                             align-items: center
                             gap: 16px
                             position: relative
+                            &:hover
+                                .bank-enquire
+                                    opacity: 1
                             .bank-enquire
+                                opacity: 0
+                                transition: .5s ease-in-out
                                 position: absolute
                                 inset: 0
                                 background: #FFFFFF80
@@ -113,10 +118,144 @@
                                 .rate
                                     font-size: 16px
                                     @include font(500)
-                                    color: $primary
-                                
-                            
-                            
+                                    color: $primary        
+                .loan-eligibility-content
+                    .loan-eligibility-row
+                        background: #F1FBEF
+                        display: grid
+                        grid-template-columns: 1fr 250px
+                        .col-a
+                            padding: 32px 52px 32px 32px
+                            .website-content
+                                ul
+                                    margin-top: 32px
+                                    position: relative
+                                    padding-left: 0
+                                    li 
+                                        padding-left: 36px
+                                        
+                                        &::before
+                                            top: 4px
+                                            width: 15px
+                                        &:not(:last-child)
+                                            margin-bottom: 18px 
+                                        strong
+                                            color: $primary  
+                                    &::before
+                                        content: ""
+                                        position: absolute
+                                        left: 7px 
+                                        top: 0
+                                        width: 1px
+                                        background: $primary
+                                        height: 100%
+                                .btn
+                                    margin-top: 40px
+                        .col-b
+                            padding: 32px 32px 0px 0px
+                            position: sticky
+                            bottom: 0
+                            figure
+                                height: 100%
+                                display: flex
+                                align-items: end
+                                justify-content: center
+                                img
+                                    display: block
+                .document-content
+                    .document-row
+                        display: grid
+                        grid-template-columns: 40% 60%
+                        border: 1px solid var(--border)
+                        border-radius: 10px
+                        .col-a
+                            background: var(--gray)
+                            padding: 24px
+                            ul
+                                li
+                                    cursor: pointer
+                                    font-weight: 500
+                                    padding: 16px 0
+                                    display: flex
+                                    align-items: center
+                                    justify-content: space-between
+                                    gap: 20px
+                                    &:not(:last-child)
+                                        border-bottom: 1px solid var(--border)
+                                    &:first-child
+                                        padding-top: 0
+                                    &:last-child
+                                        padding-bottom: 0
+                                    &.active
+                                        color: $primary
+                                        @include font(600)
+                                        .ico
+                                            filter: grayscale(0)    
+                                    .ico
+                                        filter: grayscale(1)
+                                        flex-shrink: 0
+                                        img
+                                            vertical-align: middle
+                        .col-b
+                            padding: 24px   
+                            .website-content
+                                ul
+                                    li
+                                        &::before
+                                            background: url("../../icon/check-gray.svg") no-repeat center center
+                                            background-size: 100% auto
+                                            width: 20px
+                                            height: 20px
+                                            top: 2px
+                .faq-content
+                    .faq-row
+                        .accordion
+                            border: 1px solid var(--border)
+                            border-radius: 10px
+                            position: relative
+                            &:not(:last-child)
+                                margin-bottom: 24px
+                            &::before
+                                position: absolute
+                                content: ""
+                                background: linear-gradient(180deg, #1255A7 0%, #072141 100%)
+                                width: 100%
+                                height: 100%
+                                top: 0
+                                left: 0
+                                transition: 0.5s ease-in-out
+                                opacity: 0
+                                pointer-events: none
+                                border-radius: 10px
+                            .accordion-header
+                                padding: 8px 24px
+                                h4
+                                    position: realtive
+                                    z-index: 1
+                                    font-size: 18px
+                                    @include font(600)
+                                .toggle
+                                    position: relative
+                                    z-index: 1 
+                            .accordion-content
+                                position: relative
+                                z-index: 1
+                                color: $text
+                                padding: 0px 24px
+                                .content
+                                    margin-top: 0
+                            &.open
+                                &::before
+                                    opacity: 1
+                                .accordion-header
+                                    h4
+                                        color: white
+                                .accordion-content
+                                    padding: 0px 24px 32px
+                                    color: #FFFFFFB2
+                                    
+
+
             .form-col-b
                 background: #DDDDDD33
                 border-radius: 10px

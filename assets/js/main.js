@@ -22,6 +22,25 @@ document.querySelectorAll(".overlay, .close").forEach((el) => {
   }
 });
 
+document.querySelectorAll(".accordion-header").forEach((header) => {
+  header.addEventListener("click", () => {
+    const parent = header.closest(".accordion");
+    document.querySelectorAll(".accordion").forEach((acc) => {
+      if (acc !== parent) {
+        acc.classList.remove("open");
+        const t = acc.querySelector(".toggle");
+        if (t) t.innerHTML = '<img src="assets/icon/plus.svg" alt="">';
+      }
+    });
+    parent.classList.toggle("open");
+    const toggle = header.querySelector(".toggle");
+    if (toggle)
+      toggle.innerHTML = parent.classList.contains("open")
+        ? '<img src="assets/icon/minus.svg" alt="">'
+        : '<img src="assets/icon/plus.svg" alt="">';
+  });
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const textSlides = document.querySelectorAll(".hero-usp-slider .usp-slide");
 
@@ -121,9 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ANIM_MS = 700;
 
   function easeInOut(t) {
-    return t < 0.5
-      ? 2 * t * t
-      : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
   }
 
   // ─── Draw semicircular donut ───────────────────────────────────────────────
@@ -176,10 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
         startTime = timestamp;
       }
 
-      const progress = Math.min(
-        (timestamp - startTime) / ANIM_MS,
-        1
-      );
+      const progress = Math.min((timestamp - startTime) / ANIM_MS, 1);
 
       const eased = easeInOut(progress);
 
@@ -200,10 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ─── Format Indian currency ────────────────────────────────────────────────
   function formatINR(value) {
-    return (
-      "₹ " +
-      Math.round(value).toLocaleString("en-IN")
-    );
+    return "₹ " + Math.round(value).toLocaleString("en-IN");
   }
 
   // ─── Update slider progress ────────────────────────────────────────────────
@@ -212,13 +223,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const max = parseFloat(rangeEl.max) || 100;
     const value = parseFloat(rangeEl.value) || 0;
 
-    const percentage =
-      max === min ? 0 : ((value - min) / (max - min)) * 100;
+    const percentage = max === min ? 0 : ((value - min) / (max - min)) * 100;
 
-    rangeEl.style.setProperty(
-      "--val",
-      `${percentage.toFixed(2)}%`
-    );
+    rangeEl.style.setProperty("--val", `${percentage.toFixed(2)}%`);
   }
 
   // ─── Calculate EMI ─────────────────────────────────────────────────────────
@@ -253,8 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const totalPayable = emi * months;
     const totalInterest = totalPayable - P;
-    const principalFraction =
-      totalPayable > 0 ? P / totalPayable : 1;
+    const principalFraction = totalPayable > 0 ? P / totalPayable : 1;
 
     // Update displayed values
     emiResult.textContent = formatINR(emi);
@@ -294,10 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const min = Number(rangeEl.min);
       const max = Number(rangeEl.max);
 
-      const clamped = Math.min(
-        Math.max(value, min),
-        max
-      );
+      const clamped = Math.min(Math.max(value, min), max);
 
       rangeEl.value = String(clamped);
       inputEl.value = String(clamped);
