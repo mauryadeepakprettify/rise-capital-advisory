@@ -79,7 +79,7 @@
             font-family: inherit
             cursor: initial
             padding: 0 var(--paddingleftright)
-            &:focus,&.valid
+            &:focus,&.valid, &:not(:placeholder-shown)
                 outline: none
                 & ~ label
                     font-size: var(--labelfontafter)
@@ -101,7 +101,7 @@
             @include scrollbar(2px,none,$primary,15px)
             padding: 0 var(--paddingleftright)
             padding-right: 15px
-            &:focus,&.valid
+            &:focus,&.valid, &:not(:placeholder-shown)
                 outline: none
                 margin-top: 13px
                 height: calc(var(--textareaheight) - 13px)
