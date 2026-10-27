@@ -246,7 +246,10 @@
                                             vertical-align: middle
                         .col-b
                             padding: 24px
-                            .website-content
+                            .tab-content
+                                display: none
+                                &.active
+                                    display: block
                                 ul
                                     li
                                         &::before
@@ -255,7 +258,8 @@
                                             width: 20px
                                             height: 20px
                                             top: 2px
-                .faq-content
+                                
+                .faq-content 
                     .faq-row
                         .accordion
                             border: 1px solid var(--border)

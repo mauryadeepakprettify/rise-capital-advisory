@@ -204,12 +204,12 @@
         <div class="content-nav">
             <div class="container">
                 <ul class="nav-tabs">
-                    <li><a href="/home-loan-detail.html#overview" class="active">Overview</a></li>
-                    <li><a href="/home-loan-detail.html#benifits">Benifits</a></li>
-                    <li><a href="/home-loan-detail.html#banks">Banks</a></li>
-                    <li><a href="/home-loan-detail.html#eligibility">Eligibility</a></li>
-                    <li><a href="/home-loan-detail.html#documents">Dcuments Required</a></li>
-                    <li><a href="/home-loan-detail.html#faq">FAQs</a></li>
+                    <li><a href="#overview" class="active">Overview</a></li>
+                    <li><a href="#benifits">Benefits</a></li>
+                    <li><a href="#banks">Banks</a></li>
+                    <li><a href="#eligibility">Eligibility</a></li>
+                    <li><a href="#documents">Dcuments Required</a></li>
+                    <li><a href="#faq">FAQs</a></li>
                 </ul>
             </div>
         </div>
@@ -394,25 +394,39 @@
 
                             <div class="document-row">
                                 <div class="col-a">
-                                    <ul>
-                                        <li class="active">Loan Application & Photographs <span class="ico"><img
-                                                    src="assets/icon/right-arrow.svg" alt="right arrow"></span></li>
-                                        <li>KYC Documents (Identity, Address, Age Proof) <span class="ico"><img
-                                                    src="assets/icon/right-arrow.svg" alt="right arrow"></span></li>
-                                        <li>Income Documents <span class="ico"><img src="assets/icon/right-arrow.svg"
+                                    <ul class="tab-list">
+                                        <li class="active" data-tab="1">Loan Application & Photographs <span
+                                                class="ico"><img src="assets/icon/right-arrow.svg"
                                                     alt="right arrow"></span></li>
-                                        <li>Existing Loan / Obligation Proof (If Applicable) <span class="ico"><img
+                                        <li data-tab="2">KYC Documents (Identity, Address, Age Proof) <span
+                                                class="ico"><img src="assets/icon/right-arrow.svg"
+                                                    alt="right arrow"></span></li>
+                                        <li data-tab="3">Income Documents <span class="ico"><img
                                                     src="assets/icon/right-arrow.svg" alt="right arrow"></span></li>
-                                        <li>Additional Documents (May Be Required by Some Lenders) <span
+                                        <li data-tab="4">Existing Loan / Obligation Proof (If Applicable) <span
+                                                class="ico"><img src="assets/icon/right-arrow.svg"
+                                                    alt="right arrow"></span></li>
+                                        <li data-tab="5">Additional Documents (May Be Required by Some Lenders) <span
                                                 class="ico"><img src="assets/icon/right-arrow.svg"
                                                     alt="right arrow"></span></li>
                                     </ul>
                                 </div>
                                 <div class="col-b">
-                                    <div class="website-content">
+                                    <div class="website-content tab-content active" data-content="1">
                                         <ul>
                                             <li>Duly filled & signed Loan application form</li>
                                             <li>Passport-size photographs (Applicant + Co-applicant)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="website-content tab-content" data-content="2">
+                                        <ul>
+                                            <li>PAN Card (Mandatory)</li>
+                                            <li>Proof of Identity (Any one): Passport / Aadhaar Card / Driving License /
+                                                Voter ID</li>
+                                            <li>Proof of Address (Any one): Passport / Aadhaar Card / Driving License /
+                                                Voter ID / Utility Bill / Rental Agreement</li>
+                                            <li>Proof of Age: Passport / Aadhaar Card / Driving License / Birth
+                                                Certificate</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -765,7 +779,7 @@
                     <label for="">Message</label>
                 </div>
                 <div class="sbmt-grp text-center full">
-                    <a href="" class="btn black">SUBMIT</a>
+                    <a href="" class="btn gradient-btn">SUBMIT</a>
                 </div>
             </div>
         </div>
