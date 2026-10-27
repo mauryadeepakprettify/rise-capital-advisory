@@ -342,3 +342,107 @@ header
             border: 2px solid $white
 
     
+
+.modal.apply-modal
+    top: 100%
+    left: 50%
+    translate: -50% 100%
+    background: $white
+    z-index: 20
+    max-width: 562px
+    width: 100%
+    max-height: 75vh
+    height: 100%
+    border-radius: 16px
+    overflow: hidden
+    transition: .5s ease
+    &.is-open
+        top: 50%
+        translate: -50% -50%
+    .modal-body
+        height: 100%
+        display: flex
+        flex-direction: column
+        .heading
+            flex-shrink: 0
+            padding: 16px 24px
+            border-bottom: 1px solid var(--border)
+            h3
+                color: $primary
+                font-size: 26px
+                text-align: center
+                @include font(700)
+        .form
+            flex: 1
+            min-height: 0
+            overflow-y: auto
+            padding: 32px 24px 24px
+            &.form-grid
+                --item: 2
+            .form-group
+                &.full
+                    grid-column: span 2
+            .row
+                grid-column: span 2
+                ul
+                    display: grid
+                    grid-template-columns: repeat(2, 1fr)
+                    gap: 6px
+                    li
+                        label
+                            font-size: 14px
+                            padding-left: 24px
+                            position: relative
+                            &::before
+                                position: absolute
+                                left: 0
+                                top: 0
+                                width: 16px
+                                height: 16px
+                                content: ""
+                                transition: .5s ease
+                                border: 1px solid $secondary
+
+                        input[type="radio"], input[type="checkbox"]
+                            display: none
+
+                .radio-list
+                    li
+                        label
+                            &::before
+                                border-radius: 50%
+                        input:checked ~ label::before
+                            background-color: $secondary
+
+
+                .checkbox-list
+                    li
+                        label
+                            &::before
+                                border-radius: 4px
+                        input:checked ~ label::before
+                            content: "✓"
+                            background-color: $secondary
+                            color: $white
+                            font-size: 14px
+                            font-weight: 400
+                            text-align: center
+                            line-height: 16px
+
+                                
+            h4
+                font-size: 18px
+                margin-bottom: 12px
+                color: $primary
+            .form-caption,
+            .sbmt-btn
+                grid-column: span 2
+                .btn
+                    margin: 0 auto
+                    display: block
+            .form-caption
+                p
+                    font-size: 14px
+                    a
+                        color: $secondary
+            
