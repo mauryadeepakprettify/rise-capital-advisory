@@ -4,9 +4,58 @@
     height: 615px
     background: $primary
     .container
+        
         &::before
             top: -200px
-            
+        .hero-content
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 80px
+            .col-a
+                padding: 50px 0 0 
+                z-index: 2
+                position: relative
+                display: flex
+                flex-direction: column
+                h1
+                    color: $white
+                    font-size: 36px
+                    max-width: 363px
+                    margin-bottom: 16px
+
+                p
+                    color: #FFFFFFB2
+                    max-width: 342px
+                figure
+                    flex: 1
+                    display: flex
+                    justify-content: center
+                    align-items: end
+                    img
+                        display: block
+                        height: 100%
+                        object-fit: cover
+            .col-b
+                padding: 50px 0
+                z-index: 2
+                position: relative
+                .calculator-box
+                    background: $white
+                    border-radius: 10px
+                    overflow: hidden
+                    padding: 42px
+                    h3
+                        font-size: 24px
+                        @inlcude font(700)
+                        color: $primary
+                        text-align: center
+                        margin-bottom: 32px
+                    
+                    .btn
+                        margin: 32px auto 0
+                        display: block
+
+
 .content-nav
     background: var(--gray)
     position: sticky
@@ -14,7 +63,7 @@
     z-index: 5
     .container
         .nav-tabs
-            display: flex 
+            display: flex
             align-items: center
             gap: 24px
             li
@@ -22,7 +71,7 @@
                     padding: 16px 10px
                     display: inline-block
                     font-size: 16px
-                    @include font(500) 
+                    @include font(500)
                     transition: .5s ease
                     position: relative
                     &::before
@@ -39,7 +88,6 @@
                         &::before
                             width: 100%
 
-
 .loan-detail-sec-b
     padding: 60px 0 0
     .container
@@ -49,10 +97,10 @@
             gap: 48px
             .content-col-a
                 .content
-                    margin-top: 50px  
+                    margin-top: 50px
                     h2
                         margin-bottom: 30px
-                .benifits-content 
+                .benifits-content
                     .benifits-row
                         display: grid
                         grid-template-columns: repeat(2, 1fr)
@@ -67,8 +115,8 @@
                                 gap: 24px
                                 align-items: center
                                 margin-bottom: 20px
-                                span 
-                                    flex-shrink: 0  
+                                span
+                                    flex-shrink: 0
                                     width: 51px
                                     height: 51px
                                     display: inline-flex
@@ -110,7 +158,7 @@
                                 align-items: center
                                 justify-content: center
                             figure
-                                width: 90px 
+                                width: 90px
                             figcaption
                                 .ttl
                                     font-size: 14px
@@ -118,7 +166,7 @@
                                 .rate
                                     font-size: 16px
                                     @include font(500)
-                                    color: $primary        
+                                    color: $primary
                 .loan-eligibility-content
                     .loan-eligibility-row
                         background: #F1FBEF
@@ -131,20 +179,20 @@
                                     margin-top: 32px
                                     position: relative
                                     padding-left: 0
-                                    li 
+                                    li
                                         padding-left: 36px
-                                        
+
                                         &::before
                                             top: 4px
                                             width: 15px
                                         &:not(:last-child)
-                                            margin-bottom: 18px 
+                                            margin-bottom: 18px
                                         strong
-                                            color: $primary  
+                                            color: $primary
                                     &::before
                                         content: ""
                                         position: absolute
-                                        left: 7px 
+                                        left: 7px
                                         top: 0
                                         width: 1px
                                         background: $primary
@@ -190,14 +238,14 @@
                                         color: $primary
                                         @include font(600)
                                         .ico
-                                            filter: grayscale(0)    
+                                            filter: grayscale(0)
                                     .ico
                                         filter: grayscale(1)
                                         flex-shrink: 0
                                         img
                                             vertical-align: middle
                         .col-b
-                            padding: 24px   
+                            padding: 24px
                             .website-content
                                 ul
                                     li
@@ -236,7 +284,7 @@
                                     @include font(600)
                                 .toggle
                                     position: relative
-                                    z-index: 1 
+                                    z-index: 1
                             .accordion-content
                                 position: relative
                                 z-index: 1
@@ -253,8 +301,6 @@
                                 .accordion-content
                                     padding: 0px 24px 32px
                                     color: #FFFFFFB2
-                                    
-
 
             .form-col-b
                 background: #DDDDDD33
@@ -263,7 +309,7 @@
                 position: sticky
                 top: calc(var(--headerheight) + 100px)
                 height: fit-content
-                h3 
+                h3
                     font-size: 20px
                     @include font(700)
                     text-align: center

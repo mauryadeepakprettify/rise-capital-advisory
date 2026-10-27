@@ -96,29 +96,28 @@ document.addEventListener("DOMContentLoaded", () => {
     !loanInput ||
     !rateInput ||
     !tenureInput ||
-    !emiResult ||
-    !bLoan ||
-    !bInterest ||
-    !bTotal ||
-    !canvas
+    !emiResult
   ) {
     return;
   }
 
   // ─── Canvas setup (HiDPI support) ──────────────────────────────────────────
-  const ctx = canvas.getContext("2d");
-
+  let ctx = null;
   const W = 350;
   const H = 180;
-  const DPR = window.devicePixelRatio || 1;
 
-  canvas.width = W * DPR;
-  canvas.height = H * DPR;
+  if (canvas) {
+    ctx = canvas.getContext("2d");
+    const DPR = window.devicePixelRatio || 1;
 
-  canvas.style.width = `${W}px`;
-  canvas.style.height = `${H}px`;
+    canvas.width = W * DPR;
+    canvas.height = H * DPR;
 
-  ctx.scale(DPR, DPR);
+    canvas.style.width = `${W}px`;
+    canvas.style.height = `${H}px`;
+
+    ctx.scale(DPR, DPR);
+  }
 
   // ─── Chart geometry ────────────────────────────────────────────────────────
   const CX = W / 2;
@@ -145,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ─── Draw semicircular donut ───────────────────────────────────────────────
   function drawDonut(fraction) {
+    if (!ctx) return;
     ctx.clearRect(0, 0, W, H);
 
     fraction = Math.max(0, Math.min(1, fraction));
@@ -179,6 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ─── Animate chart smoothly ────────────────────────────────────────────────
   function animateTo(targetFraction) {
+    if (!ctx) return;
     if (animationFrame !== null) {
       cancelAnimationFrame(animationFrame);
     }
@@ -264,12 +265,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Update displayed values
     emiResult.textContent = formatINR(emi);
-    bLoan.textContent = formatINR(P);
-    bInterest.textContent = formatINR(totalInterest);
-    bTotal.textContent = formatINR(totalPayable);
+    if (bLoan) bLoan.textContent = formatINR(P);
+    if (bInterest) bInterest.textContent = formatINR(totalInterest);
+    if (bTotal) bTotal.textContent = formatINR(totalPayable);
 
     // Animate chart according to principal / total payable
-    animateTo(principalFraction);
+    if (ctx) {
+      animateTo(principalFraction);
+    }
   }
 
   // ─── Range slider → input field ────────────────────────────────────────────
