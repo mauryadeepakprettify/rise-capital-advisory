@@ -923,7 +923,7 @@ button {
 }
 .btn {
   border-radius: 25px;
-  padding: 8px 14px;
+  padding: 12px 24px;
   font-weight: 600;
   font-size: 16px;
   line-height: 1;
@@ -1087,6 +1087,9 @@ button {
   background: url("/icon/right-arrow.svg") no-repeat;
   background-position: 100% 50%;
   background-size: 15px;
+}
+.btn.small {
+  padding: 8px 14px;
 }
 
 .modal {
