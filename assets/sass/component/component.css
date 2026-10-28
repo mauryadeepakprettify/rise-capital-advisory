@@ -116,10 +116,19 @@
   cursor: initial;
   padding: 0 var(--paddingleftright);
 }
-.form .form-group input:focus, .form .form-group input.valid, .form .form-group textarea:focus, .form .form-group textarea.valid {
+.form .form-group input:not(:-moz-placeholder), .form .form-group textarea:not(:-moz-placeholder) {
   outline: none;
 }
-.form .form-group input:focus ~ label, .form .form-group input.valid ~ label, .form .form-group textarea:focus ~ label, .form .form-group textarea.valid ~ label {
+.form .form-group input:focus, .form .form-group input.valid, .form .form-group input:not(:placeholder-shown), .form .form-group textarea:focus, .form .form-group textarea.valid, .form .form-group textarea:not(:placeholder-shown) {
+  outline: none;
+}
+.form .form-group input:not(:-moz-placeholder) ~ label, .form .form-group textarea:not(:-moz-placeholder) ~ label {
+  font-size: var(--labelfontafter);
+  color: var(--labelafter);
+  top: calc(var(--labelfontafter) / -2);
+  background: var(--labelbackground);
+}
+.form .form-group input:focus ~ label, .form .form-group input.valid ~ label, .form .form-group input:not(:placeholder-shown) ~ label, .form .form-group textarea:focus ~ label, .form .form-group textarea.valid ~ label, .form .form-group textarea:not(:placeholder-shown) ~ label {
   font-size: var(--labelfontafter);
   color: var(--labelafter);
   top: calc(var(--labelfontafter) / -2);
@@ -154,7 +163,12 @@
   padding: 0 var(--paddingleftright);
   padding-right: 15px;
 }
-.form .form-group textarea:focus, .form .form-group textarea.valid {
+.form .form-group textarea:not(:-moz-placeholder) {
+  outline: none;
+  margin-top: 13px;
+  height: calc(var(--textareaheight) - 13px);
+}
+.form .form-group textarea:focus, .form .form-group textarea.valid, .form .form-group textarea:not(:placeholder-shown) {
   outline: none;
   margin-top: 13px;
   height: calc(var(--textareaheight) - 13px);
@@ -408,7 +422,7 @@ body, html {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--headerheight) + 200px);
+  scroll-padding-top: calc(var(--headerheight) + 100px);
 }
 
 a {
@@ -1087,6 +1101,9 @@ button {
   background: url("/icon/right-arrow.svg") no-repeat;
   background-position: 100% 50%;
   background-size: 15px;
+}
+.btn.small {
+  padding: 8px 14px;
 }
 
 .modal {
@@ -2016,6 +2033,7 @@ button {
 
 .gradient-blur {
   position: relative;
+  z-index: 1;
 }
 .gradient-blur::before {
   content: "";
@@ -2028,6 +2046,115 @@ button {
   z-index: 0;
   border-radius: 50%;
   background: rgba(20, 98, 205, 0.8);
+}
+
+.emi-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.emi-controls .emi-field .emi-field-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.emi-controls .emi-field .emi-field-header label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+}
+.emi-controls .emi-field .emi-field-header .emi-input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #CCCCCC;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--white);
+  padding: 0 10px;
+  gap: 4px;
+  width: 141px;
+}
+.emi-controls .emi-field .emi-field-header .emi-input-wrap .currency {
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.emi-controls .emi-field .emi-field-header .emi-input-wrap .currency.suffix {
+  order: 1;
+}
+.emi-controls .emi-field .emi-field-header .emi-input-wrap input[type=number] {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  width: 100%;
+  text-align: right;
+  padding: 4.5px 0;
+  background: transparent;
+  -moz-appearance: textfield;
+}
+.emi-controls .emi-field .emi-field-header .emi-input-wrap input[type=number]::-webkit-inner-spin-button, .emi-controls .emi-field .emi-field-header .emi-input-wrap input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.emi-controls .emi-field .emi-range {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 25px;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(to right, #85C441 var(--val, 10%), #DCDCDC var(--val, 10%));
+}
+.emi-controls .emi-field .emi-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(270deg, #5E9423 0%, #85C441 100%);
+  cursor: pointer;
+  -webkit-transition: transform 0.15s ease;
+  transition: transform 0.15s ease;
+}
+.emi-controls .emi-field .emi-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+.emi-controls .emi-field .emi-range::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(270deg, #5E9423 0%, #85C441 100%);
+  cursor: pointer;
+}
+.emi-controls .emi-field .emi-range-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+.emi-controls .emi-field .emi-range-labels span {
+  font-size: 12px;
+  color: #999;
+  font-weight: 400;
+}
+.emi-controls .emi-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.emi-controls .emi-result .emi-result-label {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text);
+}
+.emi-controls .emi-result .emi-result-value {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--primary);
+  font-family: "Lato", sans-serif;
 }
 
 .home-sec-c {

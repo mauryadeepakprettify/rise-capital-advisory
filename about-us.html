@@ -174,7 +174,7 @@
                         <figcaption>
                             <h2>Our Method</h2>
 
-                            <div class="accordion open">
+                            <div class="accordion open" img-path="assets/image/about/secB.jpg">
                                 <div class="accordion-header">
                                     <h4>Discover</h4>
                                     <spn class="toggle"><img src="assets/icon/minus.svg" alt="plus icon"></spn>
@@ -187,7 +187,7 @@
                                 </div>
                             </div>
 
-                            <div class="accordion">
+                            <div class="accordion" img-path="assets/image/others/1.jpg">
                                 <div class="accordion-header">
                                     <h4>Design</h4>
                                     <spn class="toggle"><img src="assets/icon/plus.svg" alt="plus icon"></spn>
@@ -200,7 +200,7 @@
                                 </div>
                             </div>
 
-                            <div class="accordion">
+                            <div class="accordion" img-path="assets/image/others/2.jpg">
                                 <div class="accordion-header">
                                     <h4>Deploy</h4>
                                     <spn class="toggle"><img src="assets/icon/plus.svg" alt="plus icon"></spn>
@@ -213,7 +213,7 @@
                                 </div>
                             </div>
 
-                            <div class="accordion">
+                            <div class="accordion" img-path="assets/image/others/3.jpg">
                                 <div class="accordion-header">
                                     <h4>Review</h4>
                                     <spn class="toggle"><img src="assets/icon/plus.svg" alt="plus icon"></spn>
@@ -227,7 +227,7 @@
                             </div>
                         </figcaption>
                         <figure>
-                            <img src="assets/image/about/secB.jpg" alt="img">
+                            <img src="" alt="Our Method">
                         </figure>
                     </div>
                 </div>
@@ -316,12 +316,54 @@
                         <div class="directors-slider">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <div class="directors-card">
+                                    <a href="javascript:void(0)">
                                         <figure>
-                                            <img src="assets/icon/home-green.svg" alt="home" />
+                                            <img src="assets/image/about/director/1.png" alt="home" />
                                         </figure>
-                                    </div>
+                                        <figcaption>
+                                            <h4>Name Here</h4>
+                                            <p>Designation</p>
+                                        </figcaption>
+                                    </a>
                                 </div>
+
+                                <div class="swiper-slide">
+                                    <a href="javascript:void(0)">
+                                        <figure>
+                                            <img src="assets/image/about/director/1.png" alt="home" />
+                                        </figure>
+                                        <figcaption>
+                                            <h4>Name Here</h4>
+                                            <p>Designation</p>
+                                        </figcaption>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="javascript:void(0)">
+                                        <figure>
+                                            <img src="assets/image/about/director/1.png" alt="home" />
+                                        </figure>
+                                        <figcaption>
+                                            <h4>Name Here</h4>
+                                            <p>Designation</p>
+                                        </figcaption>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="javascript:void(0)">
+                                        <figure>
+                                            <img src="assets/image/about/director/1.png" alt="home" />
+                                        </figure>
+                                        <figcaption>
+                                            <h4>Name Here</h4>
+                                            <p>Designation</p>
+                                        </figcaption>
+
+                                    </a>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -532,6 +574,24 @@
     <script src="assets/js/swiper.js"></script>
     <script src="assets/js/function.js"></script>
     <script src="assets/js/main.js"></script>
+
+
+   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const section = document.querySelector(".about-secB");
+        if (!section) return;
+        const accordions = section.querySelectorAll(".accordion");
+        const mainImg = section.querySelector("figure img");
+        const changeImage = accordion => {
+            const imgPath = accordion.getAttribute("img-path");
+            if (imgPath) mainImg.src = imgPath;
+        };
+        changeImage(section.querySelector(".accordion.open") || accordions[0]);
+        accordions.forEach(accordion =>
+            accordion.addEventListener("click", () => changeImage(accordion))
+        );
+    });
+</script>
 </body>
 
 </html>

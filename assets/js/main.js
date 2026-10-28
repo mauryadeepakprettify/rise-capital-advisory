@@ -96,29 +96,28 @@ document.addEventListener("DOMContentLoaded", () => {
     !loanInput ||
     !rateInput ||
     !tenureInput ||
-    !emiResult ||
-    !bLoan ||
-    !bInterest ||
-    !bTotal ||
-    !canvas
+    !emiResult
   ) {
     return;
   }
 
   // ─── Canvas setup (HiDPI support) ──────────────────────────────────────────
-  const ctx = canvas.getContext("2d");
-
+  let ctx = null;
   const W = 350;
   const H = 180;
-  const DPR = window.devicePixelRatio || 1;
 
-  canvas.width = W * DPR;
-  canvas.height = H * DPR;
+  if (canvas) {
+    ctx = canvas.getContext("2d");
+    const DPR = window.devicePixelRatio || 1;
 
-  canvas.style.width = `${W}px`;
-  canvas.style.height = `${H}px`;
+    canvas.width = W * DPR;
+    canvas.height = H * DPR;
 
-  ctx.scale(DPR, DPR);
+    canvas.style.width = `${W}px`;
+    canvas.style.height = `${H}px`;
+
+    ctx.scale(DPR, DPR);
+  }
 
   // ─── Chart geometry ────────────────────────────────────────────────────────
   const CX = W / 2;
@@ -145,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ─── Draw semicircular donut ───────────────────────────────────────────────
   function drawDonut(fraction) {
+    if (!ctx) return;
     ctx.clearRect(0, 0, W, H);
 
     fraction = Math.max(0, Math.min(1, fraction));
@@ -179,6 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ─── Animate chart smoothly ────────────────────────────────────────────────
   function animateTo(targetFraction) {
+    if (!ctx) return;
     if (animationFrame !== null) {
       cancelAnimationFrame(animationFrame);
     }
@@ -264,12 +265,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Update displayed values
     emiResult.textContent = formatINR(emi);
-    bLoan.textContent = formatINR(P);
-    bInterest.textContent = formatINR(totalInterest);
-    bTotal.textContent = formatINR(totalPayable);
+    if (bLoan) bLoan.textContent = formatINR(P);
+    if (bInterest) bInterest.textContent = formatINR(totalInterest);
+    if (bTotal) bTotal.textContent = formatINR(totalPayable);
 
     // Animate chart according to principal / total payable
-    animateTo(principalFraction);
+    if (ctx) {
+      animateTo(principalFraction);
+    }
   }
 
   // ─── Range slider → input field ────────────────────────────────────────────
@@ -343,4 +346,158 @@ document.addEventListener("DOMContentLoaded", () => {
   tenureInput.value = tenureRange.value;
 
   calculate();
+})();
+
+const tabs = document.querySelectorAll("[data-tab]");
+const contents = document.querySelectorAll("[data-content]");
+
+tabs?.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    tabs?.forEach((tab) => {
+      tab.classList.remove("active");
+    });
+
+    contents?.forEach((content) => {
+      content.classList.remove("active");
+    });
+
+    const content = document.querySelector(
+      `[data-content="${tab.dataset.tab}"]`,
+    );
+    tab.classList.add("active");
+    content?.classList.add("active");
+  });
+});
+
+// ─── Scrollspy for Content Navigation Tabs ────────────────────────────────────
+(function initScrollSpy() {
+  const navTabs = document.querySelectorAll(".nav-tabs li a");
+  if (!navTabs.length) return;
+
+  const tabSections = [];
+  navTabs.forEach((tab) => {
+    const href = tab.getAttribute("href") || "";
+    const hash = href.includes("#") ? href.split("#")[1] : "";
+    if (hash) {
+      const section = document.getElementById(hash);
+      if (section) {
+        tabSections.push({ tab, section, id: hash });
+      }
+    }
+  });
+
+  if (!tabSections.length) return;
+
+  let isClickScrolling = false;
+  let clickTimeout = null;
+
+  function setActiveTab(activeTab) {
+    navTabs.forEach((tab) => {
+      tab.classList.toggle("active", tab === activeTab);
+    });
+  }
+
+  function getOffset() {
+    const navEl = document.querySelector(".content-nav");
+    const headerHeight =
+      parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue(
+          "--headerheight",
+        ),
+      ) || 120;
+    const navHeight = navEl ? navEl.offsetHeight : 54;
+    return headerHeight + navHeight + 20;
+  }
+
+  function onScroll() {
+    if (isClickScrolling) return;
+
+    // Check if reached near the bottom of the page
+    const atBottom =
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 50;
+
+    if (atBottom) {
+      setActiveTab(tabSections[tabSections.length - 1].tab);
+      return;
+    }
+
+    const threshold = getOffset() + 20;
+    let current = tabSections[0];
+
+    for (let i = 0; i < tabSections.length; i++) {
+      const rect = tabSections[i].section.getBoundingClientRect();
+      if (rect.top <= threshold) {
+        current = tabSections[i];
+      } else {
+        break;
+      }
+    }
+
+    if (current) {
+      setActiveTab(current.tab);
+    }
+  }
+
+  let ticking = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          onScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    },
+    { passive: true },
+  );
+
+  window.addEventListener(
+    "wheel",
+    () => {
+      isClickScrolling = false;
+    },
+    { passive: true },
+  );
+
+  window.addEventListener(
+    "touchmove",
+    () => {
+      isClickScrolling = false;
+    },
+    { passive: true },
+  );
+
+  // Smooth scroll and immediate active state on tab click
+  tabSections.forEach(({ tab, section, id }) => {
+    tab.addEventListener("click", (e) => {
+      e.preventDefault();
+      setActiveTab(tab);
+
+      isClickScrolling = true;
+      clearTimeout(clickTimeout);
+
+      const offset = getOffset();
+      const targetY =
+        section.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top: Math.max(0, targetY),
+        behavior: "smooth",
+      });
+
+      if (history.pushState) {
+        history.pushState(null, "", `#${id}`);
+      }
+
+      clickTimeout = setTimeout(() => {
+        isClickScrolling = false;
+      }, 800);
+    });
+  });
+
+  // Run on initial load
+  onScroll();
 })();

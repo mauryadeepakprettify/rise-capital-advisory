@@ -120,10 +120,10 @@
                             </div>
                         </li>
                         <li>
-                            <button class="btn primary-border">CIBIL Score</button>
+                            <button class="btn primary-border small">CIBIL Score</button>
                         </li>
                         <li>
-                            <button class="btn secondary-btn">Become a Partner</button>
+                            <button class="btn secondary-btn small">Become a Partner</button>
                         </li>
                     </ul>
                 </div>
@@ -134,25 +134,89 @@
     <main>
         <section class="loan-detail-sec-a">
             <div class="container gradient-blur">
+                <div class="hero-content">
+                    <div class="col-a">
+                        <h1>Make Your Dream Home a Reality</h1>
+                        <p>Compare lenders and find a home loan that fits your goals and budget.</p>
+                        <figure>
+                            <img src="assets/image/home/home.png" alt="home">
+                        </figure>
+                    </div>
+                    <div class="col-b">
+                        <div class="calculator-box">
+                            <h3>Home Loan Calculator</h3>
+                            <div class="emi-controls">
+                                <div class="emi-field">
+                                    <div class="emi-field-header">
+                                        <label for="loanAmount">Loan Amount</label>
+                                        <div class="emi-input-wrap">
+                                            <span class="currency">₹</span>
+                                            <input type="number" id="loanAmountInput" value="500000" min="50000"
+                                                max="10000000" step="10000" />
+                                        </div>
+                                    </div>
+                                    <input type="range" id="loanAmount" min="50000" max="10000000" step="10000"
+                                        value="500000" class="emi-range" />
+
+                                </div>
+
+                                <div class="emi-field">
+                                    <div class="emi-field-header">
+                                        <label for="interestRate">Interest Rate (p.a)</label>
+                                        <div class="emi-input-wrap">
+                                            <input type="number" id="interestRateInput" value="9" min="1" max="30"
+                                                step="0.1" />
+                                            <span class="currency suffix">%</span>
+                                        </div>
+                                    </div>
+                                    <input type="range" id="interestRate" min="1" max="30" step="0.1" value="9"
+                                        class="emi-range" />
+
+                                </div>
+
+                                <div class="emi-field">
+                                    <div class="emi-field-header">
+                                        <label for="tenure">Tenure (years)</label>
+                                        <div class="emi-input-wrap">
+                                            <input type="number" id="tenureInput" value="5" min="1" max="30" step="1" />
+                                            <span class="currency suffix">Yr</span>
+                                        </div>
+                                    </div>
+                                    <input type="range" id="tenure" min="1" max="30" step="1" value="5"
+                                        class="emi-range" />
+
+                                </div>
+
+                                <div class="emi-result">
+                                    <span class="emi-result-label">Equated Monthly Installments (EMI)</span>
+                                    <span class="emi-result-value" id="emiResult">₹0</span>
+                                </div>
+                            </div>
+                            <button data-modal="enquire-modal" class="btn gradient-btn">
+                                Request a Callback
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <div class="content-nav">
             <div class="container">
                 <ul class="nav-tabs">
-                    <li><a href="/home-loan-detail.html#overview" class="active">Overview</a></li>
-                    <li><a href="/home-loan-detail.html#benifits">Benifits</a></li>
-                    <li><a href="/home-loan-detail.html#banks">Banks</a></li>
-                    <li><a href="/home-loan-detail.html#eligibility">Eligibility</a></li>
-                    <li><a href="/home-loan-detail.html#documents">Dcuments Required</a></li>
-                    <li><a href="/home-loan-detail.html#faq">FAQs</a></li>
+                    <li><a href="#overview" class="active">Overview</a></li>
+                    <li><a href="#benifits">Benefits</a></li>
+                    <li><a href="#banks">Banks</a></li>
+                    <li><a href="#eligibility">Eligibility</a></li>
+                    <li><a href="#documents">Dcuments Required</a></li>
+                    <li><a href="#faq">FAQs</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="loan-detail-sec-b">
             <div class="container">
-                <div  class="content-row">
+                <div class="content-row">
                     <div class="content-col-a">
                         <section id="overview" class="website-content">
                             <h2>Find the Right Home Loan for Your Future</h2>
@@ -170,7 +234,7 @@
                                 greater clarity and confidence.</p>
                         </section>
 
-                        <div  id="benifits" class="benifits-content content">
+                        <div id="benifits" class="benifits-content content">
                             <h2>Benefits</h2>
                             <div class="benifits-row">
                                 <div class="benifit-col">
@@ -330,25 +394,39 @@
 
                             <div class="document-row">
                                 <div class="col-a">
-                                    <ul>
-                                        <li class="active">Loan Application & Photographs <span class="ico"><img
-                                                    src="assets/icon/right-arrow.svg" alt="right arrow"></span></li>
-                                        <li>KYC Documents (Identity, Address, Age Proof) <span class="ico"><img
-                                                    src="assets/icon/right-arrow.svg" alt="right arrow"></span></li>
-                                        <li>Income Documents <span class="ico"><img src="assets/icon/right-arrow.svg"
+                                    <ul class="tab-list">
+                                        <li class="active" data-tab="1">Loan Application & Photographs <span
+                                                class="ico"><img src="assets/icon/right-arrow.svg"
                                                     alt="right arrow"></span></li>
-                                        <li>Existing Loan / Obligation Proof (If Applicable) <span class="ico"><img
+                                        <li data-tab="2">KYC Documents (Identity, Address, Age Proof) <span
+                                                class="ico"><img src="assets/icon/right-arrow.svg"
+                                                    alt="right arrow"></span></li>
+                                        <li data-tab="3">Income Documents <span class="ico"><img
                                                     src="assets/icon/right-arrow.svg" alt="right arrow"></span></li>
-                                        <li>Additional Documents (May Be Required by Some Lenders) <span
+                                        <li data-tab="4">Existing Loan / Obligation Proof (If Applicable) <span
+                                                class="ico"><img src="assets/icon/right-arrow.svg"
+                                                    alt="right arrow"></span></li>
+                                        <li data-tab="5">Additional Documents (May Be Required by Some Lenders) <span
                                                 class="ico"><img src="assets/icon/right-arrow.svg"
                                                     alt="right arrow"></span></li>
                                     </ul>
                                 </div>
                                 <div class="col-b">
-                                    <div class="website-content">
+                                    <div class="website-content tab-content active" data-content="1">
                                         <ul>
                                             <li>Duly filled & signed Loan application form</li>
                                             <li>Passport-size photographs (Applicant + Co-applicant)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="website-content tab-content" data-content="2">
+                                        <ul>
+                                            <li>PAN Card (Mandatory)</li>
+                                            <li>Proof of Identity (Any one): Passport / Aadhaar Card / Driving License /
+                                                Voter ID</li>
+                                            <li>Proof of Address (Any one): Passport / Aadhaar Card / Driving License /
+                                                Voter ID / Utility Bill / Rental Agreement</li>
+                                            <li>Proof of Age: Passport / Aadhaar Card / Driving License / Birth
+                                                Certificate</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -610,8 +688,8 @@
                             Toll Free - <a href="tel:0000000000">0000 0000 000</a>
                         </p>
                         <div class="action">
-                            <button class="btn secondary-btn">Enquire Now</button>
-                            <button class="btn white-border">Whatsapp</button>
+                            <button data-modal="enquire-modal" class="btn secondary-btn">Enquire Now</button>
+                            <a href="javascript:void(0)" class="btn white-border">Whatsapp</a>
                         </div>
                     </div>
                 </div>
@@ -701,7 +779,7 @@
                     <label for="">Message</label>
                 </div>
                 <div class="sbmt-grp text-center full">
-                    <a href="" class="btn black">SUBMIT</a>
+                    <a href="" class="btn gradient-btn">SUBMIT</a>
                 </div>
             </div>
         </div>
