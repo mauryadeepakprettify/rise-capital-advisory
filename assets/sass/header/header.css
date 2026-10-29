@@ -1403,7 +1403,7 @@ button {
 .website-content > :last-child {
   margin-bottom: 0 !important;
   max-width: 1080px;
-  margin: auto;
+  margin: 0;
 }
 .website-content h1, .website-content h2, .website-content h3, .website-content h4, .website-content h5, .website-content h6 {
   color: var(--primary);
@@ -2213,6 +2213,7 @@ header .upper-col .col-b .nav li .ham-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 15px;
 }
 header .upper-col .col-b .nav li .ham-btn span {
   width: 34px;
