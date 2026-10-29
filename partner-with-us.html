@@ -200,7 +200,7 @@
                                 </div>
                             </div>
 
-                            <button class="btn secondary-btn">Become a DSA Partner</button>
+                            <button class="btn secondary-btn" data-modal="apply-modal">Become a DSA Partner</button>
                         </div>
 
                         <div class="col">
@@ -248,7 +248,7 @@
                                 </div>
                             </div>
 
-                            <button class="btn secondary-btn">Become a Referral Partner</button>
+                            <button class="btn secondary-btn" data-modal="apply-modal">Become a Referral Partner</button>
 
                         </div>
                     </div>
@@ -263,6 +263,14 @@
                         <h2>Why Choose Rise Capital Advisory</h2>
                     </div>
 
+                    <div class="swiper-nav swiper-group center-full">
+                        <button class="swiper-next partnerships-next ">
+                            <img src="assets/icon/arrow-right-green.svg" alt="next" />
+                        </button>
+                        <button class="swiper-prev partnerships-prev">
+                            <img src="assets/icon/arrow-right-green.svg" alt="" />
+                        </button>
+                    </div>
                     <div class="swiper partnerships-slider">
                         <div class="swiper-wrapper">
                             <div class="col swiper-slide">
@@ -508,7 +516,8 @@
                                             <h5>Name Here</h5>
                                             <p>Gurugram</p>
                                         </div>
-                                        <div class="play-button"><button type="button" class="play-btn"></button></div>
+                                        <div class="play-button"><button type="button" data-modal="video-modal"
+                                                data-video="" class="play-btn"></button></div>
                                     </div>
                                 </figure>
                             </div>
@@ -521,7 +530,8 @@
                                             <h5>Name Here</h5>
                                             <p>Gurugram</p>
                                         </div>
-                                        <div class="play-button"><button type="button" class="play-btn"></button></div>
+                                        <div class="play-button"><button type="button" data-modal="video-modal"
+                                                data-video="" class="play-btn"></button></div>
                                     </div>
                                 </figure>
                             </div>
@@ -534,7 +544,8 @@
                                             <h5>Name Here</h5>
                                             <p>Gurugram</p>
                                         </div>
-                                        <div class="play-button"><button type="button" class="play-btn"></button></div>
+                                        <div class="play-button"><button type="button" data-modal="video-modal"
+                                                data-video="" class="play-btn"></button></div>
                                     </div>
                                 </figure>
                             </div>
@@ -547,7 +558,8 @@
                                             <h5>Name Here</h5>
                                             <p>Gurugram</p>
                                         </div>
-                                        <div class="play-button"><button type="button" class="play-btn"></button></div>
+                                        <div class="play-button"><button type="button" data-modal="video-modal"
+                                                data-video="" class="play-btn"></button></div>
                                     </div>
                                 </figure>
                             </div>
@@ -772,6 +784,98 @@
     <script src="assets/js/function.js"></script>
     <script src="assets/js/main.js"></script>
 
+
+    <div class="modal apply-modal">
+        <button class="close">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 0.5L25.5 25.5M0.5 25.5L25.5 0.5" stroke="black" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+        <div class="modal-body">
+            <div class="heading">
+                <h3> Become a Partner</h3>
+            </div>
+            <form action="" class="form form-grid">
+                <div class="form-group">
+                    <input type="text" placeholder="" checked>
+                    <label for="">Name *</label>
+                </div>
+                <div class="form-group">
+                    <input type="number" placeholder="">
+                    <label for="">Mobile number *</label>
+                </div>
+                <div class="partner-type row">
+                    <h4>How do you want to partner with us</h4>
+                    <ul class="radio-list">
+                        <li>
+                            <input type="radio" id="dsa" name="partner" placeholder="" checked>
+                            <label for="dsa">DSA Partner</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="referral" name="partner" placeholder="">
+                            <label for="referral">Referral Partner</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="loan-type row">
+                    <h4>What Loan Product you deal in </h4>
+                    <ul class="checkbox-list">
+                        <li>
+                            <input type="checkbox" id="home-loan" name="home-loan" placeholder="">
+                            <label for="home-loan">Home Loan</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="lap" name="loan-against-property" placeholder="">
+                            <label for="lap">Loan Against Property</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="business-loan" name="business-loan" placeholder="">
+                            <label for="business-loan">Business Loan</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="personal-loan" name="personal-loan" placeholder="">
+                            <label for="personal-loan">Personal Loan</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="working-capital" name="working-capital" placeholder="">
+                            <label for="working-capital">Working Capital</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="other" name="other" placeholder="">
+                            <label for="other">Other</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="new-to-lending" name="new-to-lending" placeholder="">
+                            <label for="new-to-lending">New to Lending</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="">
+                    <label for="">Operating Location</label>
+                </div>
+                <div class="form-group">
+                    <input type="number" placeholder="">
+                    <label for="">Current Monthly volume do</label>
+                </div>
+                <div class="form-group full">
+                    <textarea name="" id="" placeholder=""></textarea>
+                    <label for="">Your Message or Query(if any)</label>
+                </div>
+
+                <div class="form-caption">
+                    <p>By clicking on "Submit", you agree to our <a href="terms-condition">Terms &
+                            Conditions</a>, <a href="privacy-policy">Privacy Policy</a> and <a href="disclaimer">Terms
+                            of
+                            use</a></p>
+                </div>
+                <div class="sbmt-btn">
+                    <button class="btn gradient-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {

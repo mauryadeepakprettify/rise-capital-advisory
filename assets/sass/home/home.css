@@ -1402,7 +1402,7 @@ button {
 .website-content > :last-child {
   margin-bottom: 0 !important;
   max-width: 1080px;
-  margin: auto;
+  margin: 0;
 }
 .website-content h1, .website-content h2, .website-content h3, .website-content h4, .website-content h5, .website-content h6 {
   color: var(--primary);
@@ -2233,9 +2233,6 @@ button {
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1019607843);
   background: var(--secondary);
   border-color: var(--secondary);
-}
-.home-sec-a .container .grid .col-a .offers li:hover figcaption {
-  font-weight: 700;
 }
 .home-sec-a .container .grid .col-b {
   display: flex;

@@ -1402,7 +1402,7 @@ button {
 .website-content > :last-child {
   margin-bottom: 0 !important;
   max-width: 1080px;
-  margin: auto;
+  margin: 0;
 }
 .website-content h1, .website-content h2, .website-content h3, .website-content h4, .website-content h5, .website-content h6 {
   color: var(--primary);
@@ -2299,6 +2299,15 @@ button {
 .partner-secB .heading h2 {
   color: white;
   margin-bottom: 30px;
+}
+.partner-secB .container {
+  position: relative;
+}
+.partner-secB .container .swiper-nav {
+  top: 60%;
+}
+.partner-secB .swiper-wrapper {
+  max-width: 90%;
 }
 .partner-secB .swiper-wrapper .col {
   border: 1px solid #D5D5D5;
