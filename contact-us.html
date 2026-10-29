@@ -8,6 +8,9 @@
 
     <link rel="shortcut icon" href="assets/image/logo.svg" type="image/x-icon" />
 
+    <!-- intl-tel-input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.7/dist/css/intlTelInput.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/font/font.css" />
     <link rel="stylesheet" href="assets/sass/header/header.css" />
@@ -188,14 +191,37 @@
                             <label for="email">Email*</label>
                         </div>
 
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="">
+                        <div class="form-group label-up form-fuild">
+                            <input type="tel" id="phone" name="phone" placeholder="" autocomplete="tel" required>
                             <label for="phone">Phone *</label>
+                            <span class="phone-error" id="phone-error"></span>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <input type="text" id="loan-type" name="loan_type" placeholder="">
                             <label for="loan-type">Loan Type *</label>
+                        </div> -->
+
+                        <div class="form-group dropdown-input">
+                            <div class="custom-select">
+                                <div class="select-selected">Loan Type *</div>
+
+                                <div class="select-options"></div>
+
+                                <select id="loanType" name="loanType" required>
+                                    <option value="">Loan Type *</option>
+                                    <option value="home-loan">Home Loan</option>
+                                    <option value="personal-loan">Personal Loan</option>
+                                    <option value="business-loan">Business Loan</option>
+                                    <option value="car-loan">Car Loan</option>
+                                    <option value="education-loan">Education Loan</option>
+                                    <option value="property-loan">Loan Against Property</option>
+                                    <option value="gold-loan">Gold Loan</option>
+                                    <option value="vehicle-loan">Two-Wheeler Loan</option>
+                                    <option value="debt-consolidation-loan">Debt Consolidation Loan</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="form-group full">
@@ -420,6 +446,95 @@
     <script src="assets/js/swiper.js"></script>
     <script src="assets/js/function.js"></script>
     <script src="assets/js/main.js"></script>
+
+
+    <!-- intl-tel-input JS -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.7/dist/js/intlTelInput.min.js"></script>
+
+    <script>
+        const phoneInput = document.querySelector("#phone");
+
+        const iti = window.intlTelInput(phoneInput, {
+            initialCountry: "in",
+            separateDialCode: true,
+            nationalMode: false,
+            loadUtils: () =>
+                import(
+                    "https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.7/dist/js/utils.js"
+                )
+        });
+
+        // Store the selected country whenever it changes
+        phoneInput.addEventListener("countrychange", function () {
+            const countryData = iti.getSelectedCountryData();
+
+            const countryCode = countryData.iso2;
+            const dialCode = countryData.dialCode;
+
+            console.log("Country Code:", countryCode);
+            console.log("Dial Code:", dialCode);
+        });
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const customSelects = document.querySelectorAll(".custom-select");
+
+            customSelects.forEach(function (customSelect) {
+                const selected = customSelect.querySelector(".select-selected");
+                const optionsBox = customSelect.querySelector(".select-options");
+                const select = customSelect.querySelector("select");
+
+                // Generate custom options from the original select
+                Array.from(select.options).forEach(function (option) {
+                    if (!option.value) return;
+
+                    const customOption = document.createElement("div");
+                    customOption.className = "select-option";
+                    customOption.textContent = option.textContent;
+                    customOption.dataset.value = option.value;
+
+                    optionsBox.appendChild(customOption);
+                });
+
+                selected.addEventListener("click", function (e) {
+                    e.stopPropagation();
+
+                    document.querySelectorAll(".custom-select.active").forEach(function (item) {
+                        if (item !== customSelect) {
+                            item.classList.remove("active");
+                        }
+                    });
+
+                    customSelect.classList.toggle("active");
+                });
+
+                optionsBox.addEventListener("click", function (e) {
+                    const option = e.target.closest(".select-option");
+
+                    if (!option) return;
+
+                    select.value = option.dataset.value;
+                    selected.textContent = option.textContent;
+
+                    optionsBox.querySelectorAll(".select-option").forEach(function (item) {
+                        item.classList.toggle("selected", item === option);
+                    });
+
+                    customSelect.classList.remove("active");
+
+                    select.dispatchEvent(new Event("change", { bubbles: true }));
+                });
+            });
+
+            document.addEventListener("click", function () {
+                document.querySelectorAll(".custom-select.active").forEach(function (item) {
+                    item.classList.remove("active");
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
