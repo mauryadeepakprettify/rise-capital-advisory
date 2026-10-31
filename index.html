@@ -9,6 +9,10 @@
     <link rel="shortcut icon" href="assets/image/logo.svg" type="image/x-icon" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.5/daterangepicker.min.css"
+        integrity="sha512-rBi1cGvEdd3NmSAQhPWId5Nd6QxE8To4ADjM2a6n0BrqQdisZ/RPUlm0YycDzvNL1HHAh1nKZqI0kSbif+5upQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/font/font.css" />
     <link rel="stylesheet" href="assets/sass/header/header.css" />
     <link rel="stylesheet" href="assets/sass/home/home.css" />
@@ -18,7 +22,7 @@
 
 <body>
     <header>
-        <div class="upper-col">
+        <div class="upper-col mob-hide">
             <div class="header-wrap">
                 <div class="col-a">
                     <a href="tel:+91020250250" class="phone">
@@ -54,7 +58,7 @@
                 </div>
                 <div class="col-b">
                     <ul class="nav">
-                        <li class="hasdropdown">
+                        <li class="hasdropdown mob-hide">
                             <a href="javascript:void(0);" class="menu">
                                 Product & Offers
                                 <img src="assets/icon/down.svg" alt="down" class="ico" />
@@ -63,7 +67,7 @@
                                 <ul class="col-md-grid">
                                     <li class="col-md"><a href="">
                                             <figure>
-                                                <img src="assets/image/home/family.png" alt="bank 1">
+                                                <img src="assets/icon/home-green.svg" alt="bank 1">
                                             </figure>
                                             <figcaption>
                                                 <h5>Home Loan</h5>
@@ -72,7 +76,7 @@
                                         </a></li>
                                     <li class="col-md"><a href="">
                                             <figure>
-                                                <img src="assets/image/home/family.png" alt="bank 1">
+                                                <img src="assets/icon/home-green.svg" alt="bank 1">
                                             </figure>
                                             <figcaption>
                                                 <h5>Home Loan</h5>
@@ -81,7 +85,7 @@
                                         </a></li>
                                     <li class="col-md"><a href="">
                                             <figure>
-                                                <img src="assets/image/home/family.png" alt="bank 1">
+                                                <img src="assets/icon/home-green.svg" alt="bank 1">
                                             </figure>
                                             <figcaption>
                                                 <h5>Home Loan</h5>
@@ -90,7 +94,7 @@
                                         </a></li>
                                     <li class="col-md"><a href="">
                                             <figure>
-                                                <img src="assets/image/home/family.png" alt="bank 1">
+                                                <img src="assets/icon/home-green.svg" alt="bank 1">
                                             </figure>
                                             <figcaption>
                                                 <h5>Home Loan</h5>
@@ -99,7 +103,7 @@
                                         </a></li>
                                     <li class="col-md"><a href="">
                                             <figure>
-                                                <img src="assets/image/home/family.png" alt="bank 1">
+                                                <img src="assets/icon/home-green.svg" alt="bank 1">
                                             </figure>
                                             <figcaption>
                                                 <h5>Home Loan</h5>
@@ -108,7 +112,7 @@
                                         </a></li>
                                     <li class="col-md"><a href="">
                                             <figure>
-                                                <img src="assets/image/home/family.png" alt="bank 1">
+                                                <img src="assets/icon/home-green.svg" alt="bank 1">
                                             </figure>
                                             <figcaption>
                                                 <h5>Home Loan</h5>
@@ -116,14 +120,20 @@
                                             </figcaption>
                                         </a></li>
                                 </ul>
-                                <a href="" class="btn gradient-btn">View all</a>
+                                <!-- <a href="" class="btn gradient-btn">View all</a> -->
                             </div>
                         </li>
-                        <li>
-                            <button class="btn primary-border small">CIBIL Score</button>
+                        <li class="mob-hide">
+                            <button data-modal="cibil-modal" class="btn primary-border small">CIBIL Score</button>
                         </li>
-                        <li>
+                        <li class="mob-hide">
                             <button data-modal="modal-modal" class="btn secondary-btn small">Become a Partner</button>
+                        </li>
+
+                        <li class="mob-show ham-btn-another">
+                            <button data-modal="menu-modal" class="ham-btn">
+                                <span></span>
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -142,34 +152,46 @@
                         </h1>
                         <ul class="offers">
                             <li class="active">
-                                <figure>
-                                    <img src="assets/icon/home.svg" alt="Home loan" />
-                                </figure>
-                                <figcaption>Home Loan</figcaption>
+                                <a href="javascript:void(0)">
+                                    <figure>
+                                        <img src="assets/icon/home.svg" alt="Home loan" />
+                                    </figure>
+                                    <figcaption>Home Loan</figcaption>
+                                </a>
                             </li>
                             <li>
-                                <figure>
-                                    <img src="assets/icon/support.svg" alt="Personal loan" />
-                                </figure>
-                                <figcaption>Personal Loan</figcaption>
+                                <a href="javascript:void(0)">
+
+                                    <figure>
+                                        <img src="assets/icon/support.svg" alt="Personal loan" />
+                                    </figure>
+                                    <figcaption>Personal Loan</figcaption>
+                                </a>
                             </li>
                             <li>
-                                <figure>
-                                    <img src="assets/icon/briefcase.svg" alt="Business loan" />
-                                </figure>
-                                <figcaption>Business Loan</figcaption>
+                                <a href="javascript:void(0)">
+
+                                    <figure>
+                                        <img src="assets/icon/briefcase.svg" alt="Business loan" />
+                                    </figure>
+                                    <figcaption>Business Loan</figcaption>
+                                </a>
                             </li>
                             <li>
-                                <figure>
-                                    <img src="assets/icon/hat.svg" alt="Education Loan" />
-                                </figure>
-                                <figcaption>Education Loan</figcaption>
+                                <a href="javascript:void(0)">
+                                    <figure>
+                                        <img src="assets/icon/hat.svg" alt="Education Loan" />
+                                    </figure>
+                                    <figcaption>Education Loan</figcaption>
+                                </a>
                             </li>
                             <li>
-                                <figure>
-                                    <img src="assets/icon/car.svg" alt="Car Loan" />
-                                </figure>
-                                <figcaption>Car Loan</figcaption>
+                                <a href="javascript:void(0)">
+                                    <figure>
+                                        <img src="assets/icon/car.svg" alt="Car Loan" />
+                                    </figure>
+                                    <figcaption>Car Loan</figcaption>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -862,7 +884,7 @@
         </div>
     </div>
 
-    <div class="modal apply-modal">
+    <div class="modal apply-modal ">
         <button class="close">
             <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.5 0.5L25.5 25.5M0.5 25.5L25.5 0.5" stroke="black" stroke-linecap="round"
@@ -954,6 +976,51 @@
         </div>
     </div>
 
+    <div class="modal apply-modal cibil-modal">
+        <button class="close">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.5 0.5L25.5 25.5M0.5 25.5L25.5 0.5" stroke="black" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+        <div class="modal-body">
+            <div class="heading">
+                <h3>Check Your Cibil Score</h3>
+            </div>
+            <form action="" class="form form-grid">
+                <div class="form-group"> 
+                    <input type="text" placeholder="" checked>
+                    <label for="">Name *</label>
+                </div>
+                <div class="form-group hasCalender rmyrx">
+                    <input placeholder type="text" name="dob" id="dob" class="form-control check-in-date ezsmw" /> <label for="">Date of Birth*</label>
+                    <!-- <p class="error"></p> -->
+                    </div>
+                <div class="form-group">
+                    <input type="number" placeholder="">
+                    <label for="">Mobile number *</label>
+                </div>
+                
+                
+                <div class="form-group">
+                    <input type="text" placeholder="">
+                    <label for="">Email Address</label>
+                </div>
+                <div class="form-group">
+                    <input type="number" placeholder="">
+                    <label for="">PAN Card</label>
+                </div>
+
+                <div class="form-caption">
+                    <p>I agree to the <a href="terms-condition">Terms & Conditions</a>, <a href="privacy-policy">Privacy Policy</a> and hereby provide explicit consent to share my Credit Information with us.</p>
+                </div>
+                <div class="sbmt-btn">
+                    <button class="btn gradient-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="modal video-modal">
         <div class="model-body">
             <button class="close-video close">
@@ -967,6 +1034,13 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-visible/1.2.0/jquery.visible.min.js"
+    integrity="sha512-771ZvVCYr4EfUGXr63AcX7thw7EKa6QE1fhxi8JG7mPacB/arC0cyvYPXKUkCrX2sYKnnFCZby3ZZik42jOuSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="assets/js/swiper.js"></script>
     <script src="assets/js/function.js"></script>
     <script src="assets/js/main.js"></script>

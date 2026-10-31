@@ -18,7 +18,7 @@
 
 <body>
     <header>
-        <div class="upper-col">
+        <div class="upper-col mob-hide">
             <div class="header-wrap">
                 <div class="col-a">
                     <a href="tel:+91020250250" class="phone">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-b">
                     <ul class="nav">
-                        <li class="hasdropdown">
+                        <li class="hasdropdown mob-hide">
                             <a href="javascript:void(0);" class="menu">
                                 Product & Offers
                                 <img src="assets/icon/down.svg" alt="down" class="ico" />
@@ -119,11 +119,17 @@
                                 <a href="" class="btn gradient-btn">View all</a>
                             </div>
                         </li>
-                        <li>
-                            <button class="btn primary-border">CIBIL Score</button>
+                        <li class="mob-hide">
+                            <button class="btn primary-border small">CIBIL Score</button>
                         </li>
-                        <li>
-                            <button class="btn secondary-btn">Become a Partner</button>
+                        <li class="mob-hide">
+                            <button data-modal="modal-modal" class="btn secondary-btn small">Become a Partner</button>
+                        </li>
+
+                        <li class="mob-show ham-btn-another">
+                            <button data-modal="menu-modal" class="ham-btn">
+                                <span></span>
+                            </button>
                         </li>
                     </ul>
                 </div>

@@ -1,14 +1,24 @@
 @import '../_common'
 
 .home-sec-c
-    padding: 70px 0
+    padding: 20px 0 70px 0
+    @include media(1024)
+        padding: 50px 0 
     .container
         .heading
             h2
             p
+                max-width: 36%
+                margin: auto
+                line-height: 1.2
+                @include media(768)
+                    max-width: 56%
         .slider-wrapper
-            margin-top: 60px
+            margin-top: 40px
             position: relative
+            .swiper-nav.center-full
+                @include media(768)
+                    width: calc(96% + 40px)
             .solution-slider
                 overflow: hidden
                 .swiper-wrapper
@@ -58,5 +68,5 @@
                                     background: $white
                                     color: $secondary
         .btn
-            margin: 60px auto 0
+            margin: 30px auto 0
             display: block

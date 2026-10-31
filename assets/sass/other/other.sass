@@ -1,0 +1,115 @@
+.privacy-secA
+  background: var(--white)
+  padding: 65px 0
+  .website-content
+    h1
+      font-size: 48px
+      margin-bottom: 25px
+
+    h2
+      font-size: 28px
+      font-weight: 500
+
+    h3
+      font-size: 24px
+      font-weight: 500
+
+    h4
+      font-size: 19px
+      font-weight: 500
+
+    h5
+      font-size: 17px
+
+    h6
+      font-size: 15px
+
+    h2, h3, h4
+      margin: 40px 0 15px
+
+    h5, h6
+      margin: 30px 0 15px
+
+    p, li
+      color: var(--text)
+      text-align: justify
+
+    a
+      color: var(--primary)
+      &:hover
+        text-decoration: underline
+
+    p
+      margin-bottom: 20px
+
+    ul
+      margin-bottom: 20px
+      padding-left: 35px
+      li
+        position: relative
+        padding-left: 35px
+
+        &:not(:last-child)
+          margin-bottom: 6px
+
+        &::before
+          content: ""
+          position: absolute
+          top: 8px
+          left: 0
+          width: 10px
+          aspect-ratio: 1
+          border-radius: 50%
+          background: var(--primary) 
+
+@media (max-width: 675px)
+  .privacy-secA
+    padding: 45px 0
+
+@media (max-width: 991px)
+  .privacy-secA .website-content h1
+    font-size: 42px
+
+@media (max-width: 675px)
+  .privacy-secA .website-content h1
+    font-size: 34px
+
+@media (max-width: 520px)
+  .privacy-secA .website-content h1
+    font-size: 28px
+
+@media (max-width: 675px)
+  .privacy-secA .website-content h2
+    font-size: 22px
+
+@media (max-width: 675px)
+  .privacy-secA .website-content h3
+    font-size: 21px
+
+@media (max-width: 675px)
+  .privacy-secA .website-content ul
+    padding-left: 10px
+
+@media (max-width: 675px)
+  .privacy-secA .website-content ul li
+    padding-left: 25px
+
+/*# sourceMappingURL=other.css.map
+
+.thanks-banner
+  height: 80vh
+  margin-top: 0
+  overflow: hidden
+  h1
+    max-width: 100% !important
+  .content
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    text-align: center
+    max-width: 35%
+    // @include media(540)
+      // width: 80%
+  .bottom-btn
+    padding: 20px
