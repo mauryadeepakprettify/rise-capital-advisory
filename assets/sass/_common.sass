@@ -1363,11 +1363,14 @@ button
             font-size: 20px
             @include font(400)
             color: $text
+            @include media(991)
+                font-size: 18px
         .emi-result-value
             font-size: 20px
             font-weight: 500
             color: $primary
             font-family: $Lato
+            text-wrap: nowrap
 
 .dropdown-input 
     .custom-select
@@ -1425,3 +1428,8 @@ button
         height: 1px
         opacity: 0
         pointer-events: none
+
+.swiper-wrapper
+    align-items: stretch
+    .swiper-slide
+        height: auto 

@@ -501,3 +501,79 @@ tabs?.forEach((tab) => {
   // Run on initial load
   onScroll();
 })();
+
+$(".datepicker-wrap").each(function () {
+  const $wrap = $(this);
+
+  const $checkIn = $wrap.find("input.check-in-date");
+
+  const $checkOut = $wrap.find("input.check-out-date");
+
+  const $parentCheckIn = $wrap.find(".rmyrx");
+
+  const $parentCheckOut = $wrap.find(".wdluj");
+
+  $checkIn.daterangepicker({
+    autoUpdateInput: false,
+
+    showDropdowns: true,
+
+    alwaysShowCalendars: true,
+
+    showCustomRangeLabel: false,
+
+    singleDatePicker: true,
+
+    autoApply: true,
+
+    maxDate: moment(),
+
+    parentEl: $parentCheckIn,
+  });
+
+  $checkIn.on("apply.daterangepicker", function (ev, picker) {
+    $(this).val(picker.startDate.format("YYYY-MM-DD")).change();
+
+    $checkOut.data("daterangepicker").minDate = picker.startDate;
+
+    $checkOut.data("daterangepicker").setStartDate(picker.startDate);
+
+    $checkOut.data("daterangepicker").setEndDate(picker.startDate);
+  });
+
+  $checkIn.on("cancel.daterangepicker", function (ev, picker) {
+    $(this).val("").change();
+
+    $checkOut.data("daterangepicker").minDate = moment();
+  });
+
+  $checkOut.daterangepicker({
+    autoUpdateInput: false,
+
+    showDropdowns: true,
+
+    alwaysShowCalendars: true,
+
+    showCustomRangeLabel: false,
+
+    singleDatePicker: true,
+
+    autoApply: true,
+
+    minDate: moment(),
+
+    parentEl: $parentCheckOut,
+  });
+
+  $checkOut.on("apply.daterangepicker", function (ev, picker) {
+    $(this).val(picker.startDate.format("YYYY-MM-DD")).change();
+
+    // $checkIn.data('daterangepicker').maxDate = picker.startDate;
+  });
+
+  $checkOut.on("cancel.daterangepicker", function (ev, picker) {
+    $(this).val("").change();
+
+    // $checkIn.data('daterangepicker').maxDate = false;
+  });
+});

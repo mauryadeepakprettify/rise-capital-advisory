@@ -2189,11 +2189,17 @@ button {
   font-weight: 400;
   color: var(--text);
 }
+@media only screen and (max-width: 991px) {
+  .emi-controls .emi-result .emi-result-label {
+    font-size: 18px;
+  }
+}
 .emi-controls .emi-result .emi-result-value {
   font-size: 20px;
   font-weight: 500;
   color: var(--primary);
   font-family: "Lato", sans-serif;
+  text-wrap: nowrap;
 }
 
 .dropdown-input .custom-select {
@@ -2258,6 +2264,13 @@ button {
   height: 1px;
   opacity: 0;
   pointer-events: none;
+}
+
+.swiper-wrapper {
+  align-items: stretch;
+}
+.swiper-wrapper .swiper-slide {
+  height: auto;
 }
 
 .about-banner {
