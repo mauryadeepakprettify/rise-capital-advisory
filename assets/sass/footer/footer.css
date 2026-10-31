@@ -617,7 +617,11 @@ h2 {
 }
 @media only screen and (max-width: 768px) {
   h2 {
-    font-size: 38px;
+    font-size: 30px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 6px;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -1189,6 +1193,11 @@ button {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+@media only screen and (max-width: 1024px) {
+  .swiper-nav.center-full {
+    width: calc(100% + 40px);
+  }
 }
 @media only screen and (max-width: 540px) {
   .swiper-nav.center-full {
@@ -2042,10 +2051,23 @@ button {
 .heading h2 span {
   color: var(--secondary);
 }
+@media only screen and (max-width: 540px) {
+  .heading h2 {
+    font-size: 24px;
+  }
+}
 .heading p {
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
+}
+@media only screen and (max-width: 540px) {
+  .heading p {
+    font-size: 14px;
+    line-height: 1.3;
+    max-width: 90%;
+    margin: auto;
+  }
 }
 
 .gradient-blur {
@@ -2245,6 +2267,18 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+@media only screen and (max-width: 768px) {
+  .quick-action .grid {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 50%;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .quick-action .grid {
+    max-width: 100%;
+  }
+}
 .quick-action .grid .action-card {
   padding: 40px;
   display: flex;
@@ -2253,6 +2287,16 @@ button {
   align-items: center;
   text-align: center;
   position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .quick-action .grid .action-card {
+    padding: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .quick-action .grid .action-card:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
 }
 .quick-action .grid .action-card:not(:last-child)::before {
   position: absolute;
@@ -2264,10 +2308,20 @@ button {
   height: 70%;
   background: rgba(65, 65, 65, 0.1019607843);
 }
+@media only screen and (max-width: 768px) {
+  .quick-action .grid .action-card:not(:last-child)::before {
+    display: none;
+  }
+}
 .quick-action .grid .action-card .ico {
   width: 48px;
   height: 48px;
   margin-bottom: 20px;
+}
+@media only screen and (max-width: 540px) {
+  .quick-action .grid .action-card .ico {
+    margin-bottom: 10px;
+  }
 }
 .quick-action .grid .action-card h4 {
   font-size: 20px;
@@ -2280,6 +2334,11 @@ button {
 .quick-action .grid .action-card .btn {
   margin-top: 16px;
   border-radius: 4px;
+}
+@media only screen and (max-width: 540px) {
+  .quick-action .grid .action-card .btn {
+    padding: 8px 30px;
+  }
 }
 .quick-action .grid .action-card .social {
   margin-top: 16px;
@@ -2316,17 +2375,50 @@ footer .upper-col .container .upper-row {
   justify-content: space-between;
   gap: 40px;
 }
+@media only screen and (max-width: 1024px) {
+  footer .upper-col .container .upper-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 360px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  footer .upper-col .container .upper-row {
+    grid-template-columns: 140px 150px;
+  }
+}
 footer .upper-col .container .upper-row .col-a {
   flex: 0 0 38%;
+}
+@media only screen and (max-width: 1024px) {
+  footer .upper-col .container .upper-row .col-a {
+    grid-column: span 3;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 540px) {
+  footer .upper-col .container .upper-row .col-a {
+    grid-column: span 2;
+  }
 }
 footer .upper-col .container .upper-row .col-a .logo {
   max-width: 277px;
   margin-bottom: 24px;
 }
+@media only screen and (max-width: 1024px) {
+  footer .upper-col .container .upper-row .col-a .logo {
+    margin-bottom: 20px;
+  }
+}
 footer .upper-col .container .upper-row .col-a p {
   color: rgba(255, 255, 255, 0.6980392157);
   margin-bottom: 32px;
   font-size: 14px;
+}
+@media only screen and (max-width: 1024px) {
+  footer .upper-col .container .upper-row .col-a p {
+    max-width: 590px;
+    margin: 0 auto 14px;
+  }
 }
 footer .upper-col .container .upper-row .col-a .more {
   display: flex;
@@ -2336,6 +2428,11 @@ footer .upper-col .container .upper-row .col-a .more {
   width: -moz-fit-content;
   width: fit-content;
   transition: 0.5s ease-in-out;
+}
+@media only screen and (max-width: 1024px) {
+  footer .upper-col .container .upper-row .col-a .more {
+    margin: auto;
+  }
 }
 footer .upper-col .container .upper-row .col-a .more:hover {
   transform: translateX(6px);
@@ -2361,6 +2458,11 @@ footer .upper-col .container .upper-row .col-b ul li a:hover, footer .upper-col 
 }
 footer .upper-col .container .upper-row .col-d {
   flex: 0 1 25%;
+}
+@media only screen and (max-width: 540px) {
+  footer .upper-col .container .upper-row .col-d {
+    grid-column: span 2;
+  }
 }
 footer .upper-col .container .upper-row .col-d h4 {
   color: var(--white);
@@ -2392,6 +2494,11 @@ footer .lower-col .container .lower-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media only screen and (max-width: 540px) {
+  footer .lower-col .container .lower-row {
+    flex-direction: column;
+  }
 }
 footer .lower-col .container .lower-row p {
   color: var(--white);

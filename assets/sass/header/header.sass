@@ -70,6 +70,8 @@ header
 
     .lower-col
         .col-a
+            @include media(540)
+                max-width: 70%
         .col-b
             .nav
                 display: flex
@@ -138,8 +140,38 @@ header
                                 margin-top: 24px
                                 justify-content: center
                                 width: 100px
+    .mob-hide
+        @include media(768)
+            display: none
 
-
+.ham-btn-another
+    display: none
+    .ham-btn
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 15px
+        span
+            width: 34px
+            height: 2px
+            display: block
+            background-color: $primary
+            position: relative
+            &::before, &::after
+                content: ""
+                position: absolute
+                width: 100%
+                height: 2px
+                background-color: $primary
+                transition: .5s ease
+                left: 0
+            &::before
+                top: -6px
+            &::after
+                top: 6px
+.mob-show
+    @include media(768)
+        display: block
 
 .menu-modal
     max-width: 100%
