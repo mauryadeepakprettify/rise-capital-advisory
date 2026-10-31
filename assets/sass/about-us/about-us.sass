@@ -2,6 +2,7 @@
 
 .about-banner
     background: $primary
+    overflow: hidden
     .container
         &::before
             top: -200px
@@ -13,43 +14,72 @@
         position: relative
         z-index: 2
         padding: 50px 0 0 0
+        @include media(1024)
+            flex-direction: column
         .colA
             flex: 0 1 40%
             max-width: 424px
+            @include media(768)
+                text-align: center
             h1
                 color: white
                 font-weight: 700
                 font-size: 36px
                 margin-bottom: 20px
+                @include media(540)
+                    font-size: 24px
+                    max-width: 80%
+                    line-height: 1.3
+                    margin: 0 auto 10px
             p
                 font-weight: 400
                 font-size: 16px
                 color: #FFFFFFB2
                 max-width: 386px
+                @include media(1024)
+                    margin: auto
+                @include media(540)
+                    line-height: 1.4
+                    max-width: 90%
+                    font-size: 14px
         .colB
             flex: 0 1 60%
             line-height: 0
 
 .about-secA
-    padding: 80px 0 
+    padding: 80px 0
+    @include media(540)
+        padding: 50px 0 
     .flex-box
         display: flex
         justify-content: center
         align-items: center
         gap: 150px
+        @include media(768)
+            flex-direction: column
+            gap: 20px
         figure
             max-width: 388px
+            line-height: 0
+            @include media(768)
+                max-width: 100px
+            @include media(540)
+                max-width: 60px
             img
                 height: 100%
                 width: 100%
                 object-fit: contain
         figcaption
             max-width: 440px
+            @include media(768)
+                text-align: center
             h2
                 line-height: 1.1
                 margin-bottom: 20px
             p
                 margin-bottom: 20px
+                @include media(768)
+                    margin: 0 auto 20px
 
 .about-secB
     background: #F3F3F3
@@ -58,15 +88,24 @@
         display: flex
         justify-content: space-between
         gap: 150px
+        @include media(1024)
+            flex-direction: column
+            gap: 50px
+        @include media(540)
+            gap: 20px
         figcaption
             flex: 1
             h2
                 margin-bottom: 35px
+                @include media(540)
+                    margin-bottom: 20px
             .accordion
                 border-left: 2px solid #D9D9D9
                 transition: 0.5s ease
                 padding: 10px 0 10px 30px
                 border-top: 1px solid #0000001A
+                @include media(540)
+                    padding: 5px 0 10px 15px
                 &.open
                     padding-bottom: 20px
                     border-left: 2px solid $primary
@@ -85,16 +124,26 @@
                             filter: brightness(0) saturate(100%) invert(10%) sepia(35%) saturate(2200%) hue-rotate(178deg) brightness(85%) contrast(105%)
                             transition: 0.5s ease
                 .accordion-content
-                    padding: 0
+                    padding: 0 60px 0 0
+                    @include media(540)
+                        padding: 0 40px 0 0
                     .content
                         color: $text
                         font-size: 16px
                         line-height: 1.3
+                        @include media(540)
+                            font-size: 14px
         figure
             width: 628px
             height: 443px
             border-radius: 10px
             overflow: hidden
+            line-height: 0
+            @include media(1024)
+                margin: auto
+            @include media(540)
+                width: 100%
+                height: auto
             img
                 height: 100%
                 width: 100%
@@ -102,10 +151,17 @@
 
 .about-secC
     padding: 70px 0
+    @include media(540)
+        padding: 50px 0
+
     .flex-box
         display: flex
         justify-content: center
         gap: 60px
+        @include media(768)
+            flex-direction: column
+        @include media(540)
+            gap: 20px
         .col
             width: 569px
             border-radius: 15px
@@ -113,6 +169,10 @@
             box-shadow: 0px 7px 29px 0px #64646F33
             padding: 40px 
             position: relative
+            @include media(768)
+                width: 100%
+            @include media(540)
+                padding: 20px
             h4
                 margin-bottom: 15px
                 font-weight: 700
@@ -120,13 +180,18 @@
                 color: $primary
             p
                 margin-bottom: 50px
+                @include media(768)
+                    margin-bottom: 70px
             figure
                 width: 55px
                 height: 55px
                 line-height: 0
                 position: absolute
                 bottom: 30px
-                right: 30px           
+                right: 30px
+                @include media(540)
+                    width: 45px
+                    height: 45px    
                 img
                     height: 100%
                     width: 100%
@@ -136,15 +201,31 @@
     background: #072141
     padding: 50px 0 
     overflow: hidden
+    @include media(768)
+        // padding: 0 0 50px 0  
+    @include media(540)
+        padding: 50px 0 20px 0
     h2
-        color: white
+        color: white !important
+        z-index: 1
+        position: relative
+        margin-bottom: 30px !important
+        @include media(540)
+            margin-bottom: 0px !important
     .grid-box-item
         display: grid
         grid-template-columns: repeat(3, 1fr)
+        @include media(768)
+            grid-template-columns: repeat(1, 1fr)
         .col
             text-align: center
             padding: 40px
             position: relative
+            @include media(768)
+                max-width: 430px
+                margin: auto
+            @include media(540)
+                padding: 40px 20px
             &::before
                 content: ""
                 width: 342px
@@ -155,10 +236,12 @@
                 top: -40%
                 z-index: 0
                 border-radius: 50%
-                background: rgb(20 98 205 / 38%)
-
+                background: rgb(20 98 205 / 38%)                    
             &:not(:last-child)
                 border-right: 1px solid #FFFFFF33
+                @include media(768)
+                    border-right: none
+                    border-bottom: 1px solid #FFFFFF33
             figure
                 background: #FFFFFF33
                 width: 66px
@@ -182,18 +265,27 @@
                 margin-bottom: 15px
                 position: relative
                 z-index: 1
+                @include media(540)
+                    margin-bottom: 10px
             p
                 font-size: 16px
                 color: #FFFFFFB2
                 line-height: 1.3
                 position: relative
                 z-index: 1
+                @include media(540)
+                    font-size: 14px
                 
 .about-secE
     padding: 50px 0 
     .slider-wrapper
         margin-top: 40px
         position: relative
+        @include media(540)
+            margin-top: 30px
+        .swiper-nav
+            @include media(768)
+                display: none
         .directors-slider
             overflow: hidden
             .swiper-wrapper

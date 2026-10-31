@@ -23,21 +23,11 @@ new Swiper(".solution-slider", {
     prevEl: ".solution-prev",
   },
   breakpoints: {
-    0: {
-      slidesPerView: 1.2,
-    },
-    540: {
-      slidesPerView: 1.5,
-    },
-    768: {
-      slidesPerView: 2.2,
-    },
-    991: {
-      slidesPerView: 3.2,
-    },
-    1024: {
-      slidesPerView: 4,
-    },
+    0: { slidesPerView: 2 },
+    540: { slidesPerView: 2 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+    1300: { slidesPerView: 4 },
   },
 });
 
@@ -64,6 +54,9 @@ new Swiper(".partnerships-slider", {
       slidesPerView: 3.2,
     },
     1024: {
+      slidesPerView: 3,
+    },
+    1300: {
       slidesPerView: 4,
     },
   },
@@ -79,15 +72,16 @@ new Swiper(".financial-growth-swiper", {
     prevEl: ".financial-growth-swiper-prev",
   },
   pagination: {
-          el: '.swiper-pagination',
-          type: 'progressbar',
-        },
+    el: '.swiper-pagination',
+    type: 'progressbar',
+  },
   breakpoints: {
     0: { slidesPerView: 1.2 },
     540: { slidesPerView: 1.5 },
     768: { slidesPerView: 2.2 },
     991: { slidesPerView: 3 },
-    1024: { slidesPerView: 3 },
+    1024: { slidesPerView: 2 },
+    1300: { slidesPerView: 3 },
   },
 });
 
@@ -103,11 +97,11 @@ new Swiper(".partners-slider-one", {
     pauseOnMouseEnter: true,
   },
   breakpoints: {
-    0: { slidesPerView: 1.2 },
-    540: { slidesPerView: 1.5 },
-    768: { slidesPerView: 2.2 },
-    991: { slidesPerView: 3.2 },
-    1024: { slidesPerView: 4 },
+    0: { slidesPerView: 2 },
+    540: { slidesPerView: 2 },
+    768: { slidesPerView: 3.2 },
+    1024: { slidesPerView: 3.2 },
+    1300: { slidesPerView: 4 },
   },
 });
 
@@ -123,11 +117,11 @@ new Swiper(".partners-slider-two", {
     reverseDirection: true,
   },
   breakpoints: {
-    0: { slidesPerView: 1.2 },
-    540: { slidesPerView: 1.5 },
-    768: { slidesPerView: 2.2 },
-    991: { slidesPerView: 3.2 },
-    1024: { slidesPerView: 4 },
+    0: { slidesPerView: 2 },
+    540: { slidesPerView: 2 },
+    768: { slidesPerView: 3.2 },
+    1024: { slidesPerView: 3.2 },
+    1300: { slidesPerView: 4 },
   },
 });
 
@@ -193,25 +187,15 @@ new Swiper(".bank-slider", {
   loop: false,
   speed: 1200,
   navigation: {
-    nextEl: ".solution-next",
-    prevEl: ".solution-prev",
+    nextEl: ".bank-next",
+    prevEl: ".bank-prev",
   },
   breakpoints: {
-    0: {
-      slidesPerView: 1.2,
-    },
-    540: {
-      slidesPerView: 1.5,
-    },
-    768: {
-      slidesPerView: 2.2,
-    },
-    991: {
-      slidesPerView: 3.2,
-    },
-    1024: {
-      slidesPerView: 6,
-    },
+    0: { slidesPerView: 4 },
+    540: { slidesPerView: 4 },
+    768: { slidesPerView: 4 },
+    1024: { slidesPerView: 5 },
+    1300: { slidesPerView: 6 },
   },
 });
 
