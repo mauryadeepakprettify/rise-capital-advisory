@@ -30,6 +30,8 @@ pnpm-debug.log*
 
 # Preprocessor & Build Cache
 .sass-cache/
+assets/sass/**/*.css
+assets/sass/**/*.css.map
 *.css.map
 
 # Logs

@@ -2394,18 +2394,18 @@ header .lower-col .col-b .nav li.hasdropdown .drop-downmenu .col-md-grid .col-md
   display: flex;
   align-items: center;
   gap: 12px;
+  padding: 0;
 }
 header .lower-col .col-b .nav li.hasdropdown .drop-downmenu .col-md-grid .col-md a figure {
-  border-radius: 4px;
-  overflow: hidden;
-  width: 40px;
-  height: 40px;
-}
-header .lower-col .col-b .nav li.hasdropdown .drop-downmenu .col-md-grid .col-md a figure img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  flex-shrink: 0;
+  width: 51px;
+  height: 51px;
+  background: var(--gradient-c);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
 }
 header .lower-col .col-b .nav li.hasdropdown .drop-downmenu .col-md-grid .col-md a figcaption h5 {
   font-size: 16px;
@@ -2722,9 +2722,10 @@ header .lower-col .col-b .nav li.hasdropdown .drop-downmenu .btn {
   max-width: 562px;
   width: 100%;
   max-height: 75vh;
-  height: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 16px;
-  overflow: hidden;
+  overflow: visible;
   transition: 0.5s ease;
 }
 .modal.apply-modal.is-open {
@@ -2748,7 +2749,6 @@ header .lower-col .col-b .nav li.hasdropdown .drop-downmenu .btn {
   font-weight: 700;
 }
 .modal.apply-modal .modal-body .form {
-  flex: 1;
   min-height: 0;
   overflow-y: auto;
   padding: 32px 24px 24px;
@@ -2771,6 +2771,7 @@ header .lower-col .col-b .nav li.hasdropdown .drop-downmenu .btn {
   font-size: 14px;
   padding-left: 24px;
   position: relative;
+  cursor: pointer;
 }
 .modal.apply-modal .modal-body .form .row ul li label::before {
   position: absolute;

@@ -2331,7 +2331,7 @@ button {
     margin-top: 30px;
   }
 }
-.home-sec-a .container .grid .col-a .offers li {
+.home-sec-a .container .grid .col-a .offers li a {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -2348,6 +2348,9 @@ button {
   justify-content: center;
   align-items: center;
   transition: 0.5s ease-in-out;
+}
+.home-sec-a .container .grid .col-a .offers li figure img {
+  filter: brightness(0) invert(1);
 }
 .home-sec-a .container .grid .col-a .offers li figcaption {
   font-size: 14px;
