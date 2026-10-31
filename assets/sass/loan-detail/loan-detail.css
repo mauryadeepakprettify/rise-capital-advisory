@@ -2189,11 +2189,17 @@ button {
   font-weight: 400;
   color: var(--text);
 }
+@media only screen and (max-width: 991px) {
+  .emi-controls .emi-result .emi-result-label {
+    font-size: 18px;
+  }
+}
 .emi-controls .emi-result .emi-result-value {
   font-size: 20px;
   font-weight: 500;
   color: var(--primary);
   font-family: "Lato", sans-serif;
+  text-wrap: nowrap;
 }
 
 .dropdown-input .custom-select {
@@ -2260,6 +2266,13 @@ button {
   pointer-events: none;
 }
 
+.swiper-wrapper {
+  align-items: stretch;
+}
+.swiper-wrapper .swiper-slide {
+  height: auto;
+}
+
 .loan-detail-sec-a {
   height: 615px;
   background: var(--primary);
@@ -2314,10 +2327,13 @@ button {
 }
 .loan-detail-sec-a .container .hero-content .col-b .calculator-box h3 {
   font-size: 24px;
-  @inlcude font(700);
-  color: var(--primary);
-  text-align: center;
-  margin-bottom: 32px;
+}
+@inlcude font(700) {
+  .loan-detail-sec-a .container .hero-content .col-b .calculator-box h3 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 32px;
+  }
 }
 .loan-detail-sec-a .container .hero-content .col-b .calculator-box .btn {
   margin: 32px auto 0;
@@ -2328,7 +2344,7 @@ button {
   background: var(--gray);
   position: sticky;
   top: var(--headerheight);
-  z-index: 5;
+  z-index: 4;
 }
 .content-nav .container .nav-tabs {
   display: flex;
